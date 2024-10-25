@@ -253,17 +253,17 @@ footer{
     }
 
     /*targets phones*/
-    body{
-        /* other */
+    /*body{
+        /* other *//*
         background-color: red;
-    }
+    }*/
 }
 @media only screen and (min-width:431px) and (max-width:820px) {
     
     /*Targets Tablets*/
-    body{
+    /*body{
         background-color: blue;
-    }
+    }*/
 }
 
 
@@ -273,9 +273,10 @@ footer{
         display: none;
     }
 
+    /*
     body{
         background-color: green;
-    }
+    }*/
 
 }
 
