@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- *Title -->
+    <title>JavaScript Notes</title>
+
+    <!-- *Description and Viewport-->
+    <meta name="description" content="Compiled Notes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--*Google Preconnects and such-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
+
+    <!-- *Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <div id="mobile-nav" class="nav mobile">
+                <a id="btn-sidebar" class="material-symbols-outlined">chevron_right</a>
+                <a id="btn-home" class="material-symbols-outlined" href="index.html">home</a>
+                <a id="btn-menu" class="material-symbols-outlined">menu</a>
+            </div>
+            <div id="computer-nav" class="nav computer">
+                <a class="nav-item" href="../index.html">Home</a>
+                <a class="nav-item" href="../JavaScript/index.html">JavaScript</a>
+                <a class="nav-item current" href="index.html">Algorithms</a>
+                <a class="nav-item" href="">Operating Systems</a>
+                <a class="nav-item" href="">Web Programmings</a>
+                <a class="nav-item" href="">Read and Write</a>
+                <a class="nav-item" href="">Database</a>
+            </div>
+        </nav>
+    </header>
+    <aside>
+        <div class="aside computer" id="aside-nav">
+            <div>
+                <h1>Course</h1>
+                <a class="current" href="index.html">
+                    <span class="material-symbols-outlined">search</span>
+                    <span class="aside-title">Overview</span>
+                </a>
+            </div>
+            <div>
+                <h1>Resources</h1>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined ">book</span>
+                    <span class="title">Study</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment</span>
+                    <span class="title">Assignment</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment_late</span>
+                    <span class="title">Problems</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+            </div>
+            <div>
+                <h1>Other</h1>
+                <a href="quick-quiz.html">
+                    <span class="material-symbols-outlined">quiz</span>
+                    <span class="aside-title">Quick Quiz</span>
+                </a>
+            </div>
+
+        </div>
+    </aside>
+    <main>
+        <section>
+            <article>
+                <div class="hgroup">
+                    <h1>Week 1</h1>
+                    <h2>Introduction</h2>
+                </div>
+                <ul>
+                    <li>This course is designed to challenge the way that you think.</li>
+                    <li>In the early days of computer programming,
+                        computer programmers were free to create any set of instructions that would solve a problem
+                        and were free to choose which
+                        <abbr title="Programming Language">PL</abbr>
+                        they would use to program
+                    </li>
+                    <li>In today's computer prgramming market, we expect programmers to learn several computer languages
+                        in a career.</li>
+                    <li>This course is desidgned to teach the common skills used by all programmmers in all Programming
+                        Languages.
+                        The <strong>flowchars and pseudocode are the primary tools we will use in this course</strong>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h1>Computer Programs</h1>
+                <p><dfn>Programming</dfn> is the development of a solution to a problem. a
+                    <dfn>computer program</dfn>
+                    is a set of instructions that,when directed through ccomputer hardware, produces results.
+                    <strong>Design a solution to the program first, desk check this solution, and then code the program
+                        in a chosen programming language.</strong>
+                </p>
+            </article>
+            <article>
+                <h1>Designing a program</h1>
+                <p>The process of designing a program can be summarized in following two steps:</p>
+                <ol>
+                    <li>Understand the task that the program is to perform.</li>
+                    <li>Determine the steps that must be taken to perform the task.</li>
+                </ol>
+                <h2>Understand the task that the program is to perform</h2>
+                <p>It is essential to understand what a program is supposed to do before you can determine the steps
+                    thhat the program will perform.
+                    The programmer studies the information that was gatherdf from the problem and creates al ist of
+                    different software requirements.
+                </p>
+                <h2>Determine the steps that must be taken to perform the task</h2>
+                <p>after completing the first step, begin by breaking dowan the task into a series of steps.
+                    This is an example of an
+                    <dfn>algorithm</dfn>, which is a set of well - defined logical steps that must be taken to perform a
+                    task.
+                    for example, you want to design a program to add up a list of prices on a pocket calculator. to
+                    solve this problem we can make a task list.
+                </p>
+                <ul>
+                    <li>Turn on calculator</li>
+                    <li>Clear calculator</li>
+                    <li>Key in dollar amount</li>
+                    <li>Key in decimal point (.)</li>
+                    <li>Key in cents amount</li>
+                    <li>Press addition (+) key</li>
+                    <li>Repeat the aboves four steps until all prices have been entered</li>
+                    <li>Write down total price</li>
+                    <li>Turn off calculator</li>
+                </ul>
+                <p>Task list falls in the category of informal logic plan. In creating a task list, you can first solve
+                    the provlem by hand and then record the steps you took to solve the problem.
+                    We can create a formal logic plan by using techniques as:flowchart, psuedocode, and coputer program.
+                    In this course, we will focus on using flowchart and psudocode.
+                </p>
+                <h1>Desk Checking</h1>
+                <p>Desk checking ensures our project is correct.
+                    We will produce somesample data and work throuhg the solution by hand to see if we get the right
+                    answer . It is important to complete this step to ensure that the answer is correct.
+                    For instance, if a car achieved 35 Kilomeres per litre, we would asssume that your program was
+                    incorrect, regardless of how you designed the program.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a href="mailto:carsonfujita@gmail.com">
+            <p>carsonfujita@gmail.com</p>
+        </a>
+    </footer>
+</body>
+<!-- *Script -->
+<script src="../script.js"></script>
