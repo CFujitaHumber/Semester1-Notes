@@ -223,6 +223,242 @@ footer{
     background-color: var(--blush);
 }
 
+/* !==========================================================================
+   ! Question
+   !========================================================================== */
+
+
+   .input-container{
+    /* Display & Box Model  */
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/*Buttons*/
+.light-btn{
+    /* Variable  */
+    --color: var(--light-gray);
+
+    /* Display & Box Model  */
+    padding: 2em;
+    margin: 1em;
+    border-radius: 50px;
+    border: var(--color) solid 1px;
+
+    /* Other  */
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    background-color: var(--color);
+}
+
+.light-btn:active{
+    /* Other  */
+    --color: lightgray;
+}
+
+.answer{
+    /*Variable*/
+    --color: white;
+
+    /* Display & Box Model  */
+    flex-grow: 1;
+    min-width: 40%;
+    max-width: 100%;
+    padding: 2em;
+    margin: 0.5em;
+    border: solid black 1px;
+    border-radius: 25px;
+
+    /* Other  */
+    
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    background-color: var(--color);
+}
+
+.answer:active{
+    /* Other  */
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.hidden{
+    /* Display & Box Model  */
+    display: none;
+}
+
+.text-input{
+    /* Display & Box Model  */
+    border: none;
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+
+    /* Other  */
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    background-color: var(--honeydew);
+}
+
+.text-input::-moz-placeholder{
+    /* Other  */
+    background-color: var(--honeydew);
+}
+
+/*
+ * Used for styling quiz answers
+ */
+ .correct{
+    /* Other  */
+    background-color: var(--dark-green);
+    color: white;
+}
+
+/*
+ * Used for styling quiz answers
+ */
+
+.incorrect{
+    /* Other  */
+    background-color: var(--claret);
+    color: white;
+}
+
+
+/*
+ * Used for styling quiz answers
+ */
+.selected {
+    /* Other  */
+    background-color: var(--honeydew);
+}
+
+.question{
+    /* Display & Box Model  */
+    padding-left: 0.5em;
+
+    /* Other  */
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    text-align: center;
+    
+}
+
+.question-number{
+    /* Display & Box Model  */
+    padding: 0 0.25em 0 0.25em;
+    border-radius: 100%;
+    border: white solid 1px;
+    margin-right: 0.5em;
+    max-height: clamp(1rem, 4vw, 4rem);
+
+    /* Other  */
+    font-size: clamp(1rem, 2vw, 2rem);
+    background-color: white;
+    color: black;
+    
+}
+
+.question-number::before{
+    /* Other  */
+    content: '#';
+}
+
+.quiz{
+    /* Display & Box Model  */
+    display: flex;
+}
+
+.caption{
+    /* Other */
+    font-size: clamp(1.5rem,2vw, 2rem);
+}
+
+.count-container{
+    /* Variables  */
+    --rows: 2; 
+    --height: 10vw;
+
+    /* Display & Box Model  */
+    display: grid;
+    column-gap: 1em;
+    row-gap: 1em;
+    grid-template-areas:
+    'total wrong correct'
+    'left left correct';
+    text-align: center;
+    height: var(--height);
+    margin-bottom: 10em;
+    margin-left: 0.5em;
+}
+
+.count{
+    /* Variables  */
+    --color: red;
+
+    /* Display & Box Model  */
+    border-radius: 10px;
+    border: var(--color) solid 1px;
+
+    /* Other  */
+    background-color: var(--color);
+    color: white;
+    font-size: calc(var(--height) /var(--rows)) ;
+}
+
+.quiz-details{
+    display: flex;
+    flex-flow: column wrap;
+    /* Variables  */
+    --color: var(--honeydew);
+
+    /* Display & Box Model  */
+    float: right;
+    max-width: 20vw;
+    margin: 0 0.5em 0 0.5em;
+    border: var(--color) solid 1px;
+    border-radius: 5%;
+
+    /* Other  */
+    background-color: var(--color);
+}
+
+.current-question {
+    /* Other  */
+    color: white;
+    background-color: var(--dark-green);
+}
+
+.next-question {
+    /* Display & Box Model  */
+   padding: 0.5em;
+}
+
+.question-total{
+    /* Variables  */
+    --color: var(--silver);
+    /* Display & Box Model  */
+    grid-area: total;
+}
+
+.questions-wrong{
+    /* Variables  */
+    --color: var(--claret);
+    /* Display & Box Model  */
+    grid-area: wrong;
+}
+
+.questions-left{
+    /* Variables  */
+    --color: var(--dim-gray);
+    /* Display & Box Model  */
+    grid-area: left;
+}
+
+.questions-correct{
+    /* Variables  */
+    --color: var(--dark-green);
+    /* Display & Box Model  */
+    grid-area: correct;
+    /* Other */
+    font-size: var(--height);
+}
 
 
 
@@ -257,6 +493,9 @@ footer{
         
     }
 
+    .quiz-details {
+        display: none;
+    }
     /*targets phones*/
     /*body{
         /* other *//*
@@ -264,7 +503,9 @@ footer{
     }*/
 }
 @media only screen and (min-width:431px) and (max-width:820px) {
-    
+    .quiz-details {
+        display: none;
+    }
     /*Targets Tablets*/
     /*body{
         background-color: blue;
@@ -284,6 +525,7 @@ footer{
     }*/
 
 }
+
 
 /* !==========================================================================
    ! Animations

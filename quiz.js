@@ -101,73 +101,18 @@ class Quiz {
     #timeLimit = new Date();
 
     /**
-     * Build a quick auth form.
-     * @returns A HTMLElement containing a quick form
-     */
-    static buildAuth(){
-        let form = document.createElement('form');
-        form.setAttribute('name','login');
-        form.setAttribute('class','flex-column');
-
-        let title = document.createElement('h1');
-        title.innerText= 'LOGIN (not really)'
-
-        let username = document.createElement('input');
-        username.setAttribute('type','text');
-        username.setAttribute('required','required');
-        username.setAttribute('name','username');
-        username.setAttribute('class','text-input');
-        username.setAttribute('placeholder','username');
-
-        let password = document.createElement('input');
-        password.setAttribute('type','password');
-        password.setAttribute('required','required');
-        password.setAttribute('name','password');
-        password.setAttribute('class','text-input');
-        password.setAttribute('placeholder','password');
-
-        let submit = document.createElement('input');
-        submit.setAttribute('type','submit');
-        submit.setAttribute('value','login')
-
-        form.appendChild(title);
-        form.appendChild(username);
-        form.appendChild(password);
-        form.appendChild(submit);
-        return form
-    }
-
-    /**
      * Constructs the quiz based on an array of question objects
      * @param {Question} question1 
      * @see Question The object class used here.
      */
     constructor(questions) {
         let main = document.getElementById('quiz');
- 
-        let auth = Quiz.buildAuth();
-        auth.addEventListener('submit', (event) => {
-            let form = document.forms.item(1);
-            if(
-                form.children.namedItem('password').value == 'password' &&
-                form.children.namedItem('username').value == 'username'
-            ){
-                let main = document.getElementById('quiz')
-                main.removeChild(main.children.namedItem('login'))
-                main.children.namedItem('wrapper').setAttribute('class','')
-                this.#start();
-            } else{
-                alert("username: 'username', password: 'password'");
-            }
-            
-            
-        });
-        main.appendChild(auth);
+
 
 
         this.#questions = questions;
 
-        //this.#start()
+        this.#start();
         
     }
 
