@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <head>
 
     <!-- *Title -->
     <title>JavaScript Notes</title>
-    
+
     <!-- *Description and Viewport-->
     <meta name="description" content="Compiled Notes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,17 @@
     <!--*Google Preconnects and such-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
 
     <!-- *Stylesheet -->
     <link rel="stylesheet" href="../style.css">
 
-    
+
 </head>
+
 <body>
     <header>
         <nav id="nav">
@@ -29,12 +33,12 @@
             </div>
             <div id="computer-nav" class="nav computer">
                 <a class="nav-item" href="../index.html">Home</a>
-                <a class="nav-item current" href="index.html">JavaScript</a>
+                <a class="nav-item" href="../JavaScript/index.html">JavaScript</a>
                 <a class="nav-item" href="../Algorithms/index.html">Algorithms</a>
                 <a class="nav-item" href="">Operating Systems</a>
                 <a class="nav-item" href="">Web Programmings</a>
                 <a class="nav-item" href="">Read and Write</a>
-                <a class="nav-item" href="../Database/index.html">Database</a>
+                <a class="nav-item current" href="../Database/index.html">Database</a>
             </div>
         </nav>
     </header>
@@ -72,11 +76,53 @@
                     <span class="aside-title">Quick Quiz</span>
                 </a>
             </div>
-            
+
         </div>
     </aside>
     <main>
-        <h1>test</h1>
+        <section>
+            <article id="information-vs-data">
+                <h1>Information and Data</h1>
+                <p>
+                    People often treat the words "data" and "information" as interchangeable; they are not.
+                    you get information by combining, comparing, analyzing, or doing calculations on data.
+                    In a way, information is the output of an algorithms.
+                </p>
+                <ul>
+                    <li><dfn>Data</dfn>: unprocessed material</li>
+                    <li><dfn>Information</dfn>: knowledge, intelligence, or a specific piece of data with a unqie
+                        significance or purpose.</li>
+                </ul>
+            </article>
+            <article id="database">
+                <h1>Database</h1>
+                <p>
+                    A database is like a fancy computer filing system: organizing and storing data.
+                    A spreadsheet is bascially a database that arrange things in rows and columns for future reference.
+                    In computing a database is a structured and centralized repository of data stored on a computer.
+                    This system permits the retrival, addition, modification, and deletion of data, along with the
+                    capability to conver the retrieved data into meaningful information.
+                    A <abbr title="Database Administrator">DBA</abbr> manages databases, which store data in it's
+                    orginal
+                    form. Querying or retrieiving this data results in its conversion into more valuable information.
+                </p>
+            </article>
+        </section>
+        <section id="terminology">
+            <dl>
+                <dt>Data</dt>
+                <dd>unprocessed material</dd>
+
+                <dt>Information</dt>
+                <dd>Knowledge, intelligence, or a specific piece of data with a unique significance or purpose</dd>
+
+                <dt>Database</dt>
+                <dd>a structured and centralized repository of data stored on a computer</dd>
+
+                <dt>DBA</dt>
+                <dd>Database Administrator: they manage databases.</dd>
+            </dl>
+        </section>
     </main>
     <footer>
         <address>
