@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+
+    <!-- *Title -->
+    <title>Linux File Management</title>
+    
+    <!-- *Description and Viewport-->
+    <meta name="description" content="Compiled Notes about Linux">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--*Google Preconnects and such-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
+
+    <!-- *Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+    
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div id="mobile-nav" class="nav mobile">
+                <a id="btn-sidebar" class="material-symbols-outlined">chevron_right</a>
+                <a id="btn-home" class="material-symbols-outlined" href="../index.html">home</a>
+                <a id="btn-menu" class="material-symbols-outlined">menu</a>
+            </div>
+            <div id="computer-nav" class="nav computer">
+                <a class="nav-item" href="../index.html">Home</a>
+                <a class="nav-item" href="../JavaScript/">JavaScript</a>
+                <a class="nav-item" href="../Algorithms/index.html">Algorithms</a>
+                <a class="nav-item current" href="index.html">Operating Systems</a>
+                <a class="nav-item" href="">Web Programmings</a>
+                <a class="nav-item" href="">Read and Write</a>
+                <a class="nav-item" href="../Database/index.html">Database</a>
+            </div>
+        </nav>
+    </header>
+    <aside>
+        <div class="aside computer" id="aside-nav">
+            <div>
+                <h1>Course</h1>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">search</span>
+                    <span class="aside-title">Overview</span>
+                </a>
+                <a class="current" href="file-management.html">
+                    <span class="material-symbols-outlined">book</span>
+                    <span class="aside-title">Linux File Management</span>
+                </a>
+            </div>
+            <div>
+                <h1>Resources</h1>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined ">book</span>
+                    <span class="title">Study</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment</span>
+                    <span class="title">Assignment</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment_late</span>
+                    <span class="title">Problems</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+            </div>
+            <div>
+                <h1>Other</h1>
+                <a href="quick-quiz.html">
+                    <span class="material-symbols-outlined">quiz</span>
+                    <span class="aside-title">Quick Quiz</span>
+                </a>
+            </div>
+            
+        </div>
+    </aside>
+    <main>
+        <section >
+            <article>
+                <h1>What is a file, and a file system?</h1>
+                <p>
+                    A file is the term used for any collective unit of stored data and must have a unique identifier on any storage device. 
+                    Every time you format a hard-disk or flash-drive, you're writing the filesystem to one or more partition (section of the storage drive). 
+                    These filesystems determine how data or information from the user is stored by allowing you to save, write, and read those files in an organized structure (data structure). 
+                </p>
+            </article>
+            <article>What is a hierarchical file system? How is it organized?</article>
+            <p>
+                A hierarchical file system collects data into a file unit, then sorts those files in a pyramid—like a family tree.
+                There are several types of files in Linux management: Regular Files, Directories, and Special files, Pipes, Sockets, and Symbolic Links: 
+            </p>
+            <ul>
+                <li>Regular files just contain—not limited to—text binary, videos and images</li>
+                <li>Directories are a file-type that store file types and their information.</li>
+                <li>Special Files represent physical devices used for IO operations</li>
+                <li>A Pipe is a temporary file that holds output data from one command to be used as input for a second command separated by a pipe symbol (|) </li>
+                <li>A Symbolic Link is a reference to another file. (aka Soft link) It has text locating the file path to the file it references.</li>
+            </ul>
+            <p>
+                Instead of parents, grandparents, and children, the Linux file system organizes directories into a tree structure with root (/) as the parent of all directories.
+                All files require a unique identifier called a path name, which specifies the location of a file in the system through the names of the file itself, and the directories over it.
+                Under the root, there is a specific layout of directories that organizes data within a scope of visibility and purpose.
+            </p>
+            <dl>
+                <dt>Root</dt>
+                <dd>Ancestor of all files and the home of the root user.</dd>
+                
+                <dt>/dev</dt>
+                <dd>Special files store the device data as blocks (block special data) or a stream (character special data) under a subdirectory of root called dev. </dd>
+
+                <dt>/mnt</dt>
+                <dd>contains mounting point for mounting other filesystems</dd>
+
+                <dt>/temp</dt>
+                <dd>temporary files</dd>
+
+                <dt>/boot</dt>
+                <dd>Contains the files to boot the system</dd>
+
+                <dt>/etc</dt>
+                <dd>Machine-local system configuration files</dd>
+
+                <dt>/home</dt>
+                <dd>User home directories</dd>
+            </dl>
+            <h3>/bin vs /sbin</h3>
+            <p>They are both essential to the filesystem, but note that:</p>
+            <dl>
+                <dt>/bin</dt>
+                <dd>stores the command binaries for running the system</dd>
+
+                <dt>/sbin</dt>
+                <dd>stores the utilities of system administration</dd>
+            </dl>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <a href="mailto:carsonfujita@gmail.com">
+                <p>carsonfujita@gmail.com</p>
+            </a>
+        </address>
+    </footer>
+</body>
+<!-- *Script -->
+<script src="../script.js"></script>

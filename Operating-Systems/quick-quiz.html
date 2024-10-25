@@ -3,10 +3,10 @@
 <head>
 
     <!-- *Title -->
-    <title>JavaScript Notes</title>
+    <title>JavaScript Quick Quiz</title>
 
     <!-- *Description and Viewport-->
-    <meta name="description" content="Compiled Notes">
+    <meta name="description" content="Quick Quiz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--*Google Preconnects and such-->
@@ -35,10 +35,10 @@
                 <a class="nav-item" href="../index.html">Home</a>
                 <a class="nav-item" href="../JavaScript/index.html">JavaScript</a>
                 <a class="nav-item" href="../Algorithms/index.html">Algorithms</a>
-                <a class="nav-item" href="../Operating-Systems/index.html">Operating Systems</a>
+                <a class="nav-item current" href="">Operating Systems</a>
                 <a class="nav-item" href="">Web Programmings</a>
                 <a class="nav-item" href="">Read and Write</a>
-                <a class="nav-item current" href="../Database/index.html">Database</a>
+                <a class="nav-item" href="../Database/index.html">Database</a>
             </div>
         </nav>
     </header>
@@ -46,7 +46,7 @@
         <div class="aside computer" id="aside-nav">
             <div>
                 <h1>Course</h1>
-                <a class="current" href="index.html">
+                <a href="index.html">
                     <span class="material-symbols-outlined">search</span>
                     <span class="aside-title">Overview</span>
                 </a>
@@ -71,58 +71,59 @@
             </div>
             <div>
                 <h1>Other</h1>
-                <a href="quick-quiz.html">
+                <a class="current" href="quick-quiz.html">
                     <span class="material-symbols-outlined">quiz</span>
                     <span class="aside-title">Quick Quiz</span>
                 </a>
             </div>
-
         </div>
     </aside>
-    <main>
-        <section>
-            <article id="information-vs-data">
-                <h1>Information and Data</h1>
-                <p>
-                    People often treat the words "data" and "information" as interchangeable; they are not.
-                    you get information by combining, comparing, analyzing, or doing calculations on data.
-                    In a way, information is the output of an algorithms.
-                </p>
-                <ul>
-                    <li><dfn>Data</dfn>: unprocessed material</li>
-                    <li><dfn>Information</dfn>: knowledge, intelligence, or a specific piece of data with a unqie
-                        significance or purpose.</li>
-                </ul>
-            </article>
-            <article id="database">
-                <h1>Database</h1>
-                <p>
-                    A database is like a fancy computer filing system: organizing and storing data.
-                    A spreadsheet is bascially a database that arrange things in rows and columns for future reference.
-                    In computing a database is a structured and centralized repository of data stored on a computer.
-                    This system permits the retrival, addition, modification, and deletion of data, along with the
-                    capability to conver the retrieved data into meaningful information.
-                    A <abbr title="Database Administrator">DBA</abbr> manages databases, which store data in it's
-                    orginal
-                    form. Querying or retrieiving this data results in its conversion into more valuable information.
-                </p>
-            </article>
-        </section>
-        <section id="terminology">
-            <dl>
-                <dt>Data</dt>
-                <dd>unprocessed material</dd>
+    <main class="quiz" id="quiz">
+        <div class="quiz-aside" id="quiz-details">
+            <div id="quiz-time" class="time-container">
+                <h1>Time Left</h1>
+                <span id="hr" class="time">00</span>
+                <span class="time-measurement">hrs</span>
+                <span id="min" class="time">00</span>
+                <span class="time-measurement">min</span>
+                <span id="sec" class="time">00</span>
+                <span class="time-measurement">sec</span>
+            </div>
+            <h1>Remaining</h1>
+            <div id="remaining-questions"></div>
+        </div>
+        <div>
+            <div class="count-container">
+                <div class="question-total count">
+                    <span id="question-total">0</span>
+                    <p>Total</p>
+                </div>
+                <div class="questions-wrong count">
+                    <span id="questions-wrong">0</span>
+                    <p>Wrong</p>
+                </div>
+                <div class="questions-left count">
+                    <span id="questions-left">0</span>
+                    <p>Left</p>
+                </div>
+                <div class="questions-correct count">
+                    <span id="questions-correct">0</span>
+                    <p>Correct</p>
+                </div>
+            </div>
+            <div class="quiz-main">
+                <h1 class="question" id="question-head"><span class="question-number" id="question-number">9</span><span
+                        id="question">Github command to deploy comits?</span></h1>
+                <form id="answers" action="" class="input-container">
+                    <div id="quiz-functions" class="flex-column">
+                        <input id="submit" class="light-btn submit" type="button" value="Submit">
+                        <input id="skip" class="light-btn skip" type="button" value="Skip">
+                        <input id="continue" class="hidden" type="button" value="continue">
+                    </div>
+                </form>
+            </div>
 
-                <dt>Information</dt>
-                <dd>Knowledge, intelligence, or a specific piece of data with a unique significance or purpose</dd>
-
-                <dt>Database</dt>
-                <dd>a structured and centralized repository of data stored on a computer</dd>
-
-                <dt>DBA</dt>
-                <dd>Database Administrator: they manage databases.</dd>
-            </dl>
-        </section>
+        </div>
     </main>
     <footer>
         <address>
@@ -134,3 +135,12 @@
 </body>
 <!-- *Script -->
 <script src="../script.js"></script>
+
+<!-- in case ES6 modules are supported -->
+<script type="module" src="quiz-content.js"></script>
+
+<!-- in case ES6 modules aren't supported -->
+<script defer nomodule>
+    alert("Your browser doesn't support JavaScript Modules. Program will not run.");
+    console.log('fail');
+</script>
