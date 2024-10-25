@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <head>
 
     <!-- *Title -->
     <title>JavaScript Quick Quiz</title>
-    
+
     <!-- *Description and Viewport-->
     <meta name="description" content="Quick Quiz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,17 @@
     <!--*Google Preconnects and such-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
 
     <!-- *Stylesheet -->
     <link rel="stylesheet" href="../style.css">
 
-    
+
 </head>
+
 <body>
     <header>
         <nav id="nav">
@@ -72,58 +76,54 @@
                     <span class="aside-title">Quick Quiz</span>
                 </a>
             </div>
-            
         </div>
     </aside>
-    <main id="quiz">
-        <div id="wrapper">
-            <div class="quiz-details" id="quiz-details">
-                <div id="quiz-time" class="flex-row">
-                    <h1>Time Left</h1>
-                    <span id="hr" class="time">00</span>
-                    <span class="time-measurement">hrs</span>
-                    <span id="min" class="time">00</span>
-                    <span class="time-measurement">min</span>
-                    <span id="sec" class="time">00</span>
-                    <span class="time-measurement">sec</span>
-                </div>
-                <h1>Remaining</h1>
-                <div id="remaining-questions">
-                </div>
+    <main class="quiz" id="quiz">
+        <div class="quiz-aside" id="quiz-details">
+            <div id="quiz-time" class="time-container">
+                <h1>Time Left</h1>
+                <span id="hr" class="time">00</span>
+                <span class="time-measurement">hrs</span>
+                <span id="min" class="time">00</span>
+                <span class="time-measurement">min</span>
+                <span id="sec" class="time">00</span>
+                <span class="time-measurement">sec</span>
             </div>
-            <div class="flex-column">
-                <div class="count-container">
-                    <div class="question-total count flex-column">
-                        <span class="dynamic-font" id="question-total">0</span>
-                        <span class="caption">Total</span>
-                    </div>
-                    <div class="questions-wrong count flex-column">
-                        <span class="dynamic-font" id="questions-wrong">0</span>
-                        <span class="caption">Wrong</span>
-                    </div>
-                    <div class="questions-left count flex-column">
-                        <span class="dynamic-font" id="questions-left">0</span>
-                        <span class="caption">Left</span>
-                    </div>
-                    <div class="questions-correct count flex-column">
-                        <span class="dynamic-font" id="questions-correct">0</span>
-                        <span class="caption">Correct</span>
-                    </div>
-                </div>
-                <div class="flex-column">
-                    <h1 class="question" id="question-head"><span class="question-number" id="question-number">9</span><span id="question">Github command to deploy comits?</span></h1>
-                    <form id="answers" action="" class="input-container">
-                        <div id="quiz-functions" class="flex-column">
-                            <input id="submit" class="light-btn submit" type="button" value="Submit">
-                            <input id="skip" class="light-btn skip" type="button" value="Skip">
-                            <input id="continue" class="hidden" type="button" value="continue">
-                        </div>
-                    </form>
-                </div>
-                
-            </div>
+            <h1>Remaining</h1>
+            <div id="remaining-questions"></div>
         </div>
-        
+        <div>
+            <div class="count-container">
+                <div class="question-total count">
+                    <span id="question-total">0</span>
+                    <p>Total</p>
+                </div>
+                <div class="questions-wrong count">
+                    <span id="questions-wrong">0</span>
+                    <p>Wrong</p>
+                </div>
+                <div class="questions-left count">
+                    <span id="questions-left">0</span>
+                    <p>Left</p>
+                </div>
+                <div class="questions-correct count">
+                    <span id="questions-correct">0</span>
+                    <p>Correct</p>
+                </div>
+            </div>
+            <div class="quiz-main">
+                <h1 class="question" id="question-head"><span class="question-number" id="question-number">9</span><span
+                        id="question">Github command to deploy comits?</span></h1>
+                <form id="answers" action="" class="input-container">
+                    <div id="quiz-functions" class="flex-column">
+                        <input id="submit" class="light-btn submit" type="button" value="Submit">
+                        <input id="skip" class="light-btn skip" type="button" value="Skip">
+                        <input id="continue" class="hidden" type="button" value="continue">
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </main>
     <footer>
         <address>
@@ -135,4 +135,12 @@
 </body>
 <!-- *Script -->
 <script src="../script.js"></script>
-<script src="../quiz.js"></script>
+
+<!-- in case ES6 modules are supported -->
+<script type="module" src="quiz-content.js"></script>
+
+<!-- in case ES6 modules aren't supported -->
+<script defer nomodule>
+    alert("Your browser doesn't support JavaScript Modules. Program will not run.");
+    console.log('fail');
+</script>

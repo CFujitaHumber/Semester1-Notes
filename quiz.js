@@ -3,23 +3,25 @@
  */
 
 
-/**
- * Supposed to remove magic numbers....
- */
-const ANSWER_ELEMENT = Object.freeze({
-    ELEMENT: 'input',
-    CLASS: Object.freeze({
-        DEFAULT: 'answer',
-        SELECTED: 'answer selected'
-    }),
-    TYPE: 'button',
-    NAME: 'answer'
-})
+
 
 /**
  * Handler of the HTML; Manager of Questions.
  */
-class Quiz {
+export class Quiz {
+
+    /**
+     * Supposed to remove magic numbers....
+     */
+    static ANSWER_ELEMENT = Object.freeze({
+        ELEMENT: 'input',
+        CLASS: Object.freeze({
+            DEFAULT: 'answer',
+            SELECTED: 'answer selected'
+        }),
+        TYPE: 'button',
+        NAME: 'answer'
+    })
 
     /**
      * The states of a quiz as a enumerator
@@ -45,10 +47,10 @@ class Quiz {
      * @returns 
      */
     static createAnswer(answer) {
-        let input = document.createElement(ANSWER_ELEMENT.ELEMENT);
-        input.setAttribute('name', ANSWER_ELEMENT.NAME);
-        input.setAttribute('class', ANSWER_ELEMENT.CLASS.DEFAULT);
-        input.setAttribute('type', ANSWER_ELEMENT.TYPE);
+        let input = document.createElement(Quiz.ANSWER_ELEMENT.ELEMENT);
+        input.setAttribute('name', Quiz.ANSWER_ELEMENT.NAME);
+        input.setAttribute('class', Quiz.ANSWER_ELEMENT.CLASS.DEFAULT);
+        input.setAttribute('type', Quiz.ANSWER_ELEMENT.TYPE);
         input.setAttribute('value', answer);
 
         return input;
@@ -190,24 +192,24 @@ class Quiz {
         let element = eventTarget.target;
 
         //if answer isn't selected
-        if (element.getAttribute('class') == ANSWER_ELEMENT.CLASS.DEFAULT) {
+        if (element.getAttribute('class') == Quiz.ANSWER_ELEMENT.CLASS.DEFAULT) {
             //if allow the user to select an answer if it's multiple choice or they haven't selected one yet.
             if(this.currentQuestion.answers.type == Answers.Type.MULTIPLE_SELECT
                 || this.currentQuestion.answers.selected.size < 1
             ){
                 //display to user that this item is selected
-                element.setAttribute('class', ANSWER_ELEMENT.CLASS.SELECTED);
+                element.setAttribute('class', Quiz.ANSWER_ELEMENT.CLASS.SELECTED);
                 this.currentQuestion.answers.select(element.value)
             } else {
                 //switch their selection to what they selected.
-                document.getElementsByClassName(ANSWER_ELEMENT.CLASS.SELECTED).item(0).setAttribute('class',ANSWER_ELEMENT.CLASS.DEFAULT);
-                element.setAttribute('class', ANSWER_ELEMENT.CLASS.SELECTED);
+                document.getElementsByClassName(Quiz.ANSWER_ELEMENT.CLASS.SELECTED).item(0).setAttribute('class',Quiz.ANSWER_ELEMENT.CLASS.DEFAULT);
+                element.setAttribute('class', Quiz.ANSWER_ELEMENT.CLASS.SELECTED);
                 this.currentQuestion.answers.selected = new Set([element.value]);
             }
 
         } else {
             //unselect the item
-            element.setAttribute('class', ANSWER_ELEMENT.CLASS.DEFAULT);
+            element.setAttribute('class', Quiz.ANSWER_ELEMENT.CLASS.DEFAULT);
             this.currentQuestion.answers.remove(element.value)
         }
     }
@@ -376,9 +378,9 @@ class Quiz {
             if(showAnswers){
                 
                 if(this.currentQuestion.answers.correct.has(element)){
-                    answer.setAttribute('class', 'correct '+ ANSWER_ELEMENT.CLASS.DEFAULT);
+                    answer.setAttribute('class', 'correct '+ Quiz.ANSWER_ELEMENT.CLASS.DEFAULT);
                 }else{
-                    answer.setAttribute('class', 'incorrect '+ ANSWER_ELEMENT.CLASS.DEFAULT );
+                    answer.setAttribute('class', 'incorrect '+ Quiz.ANSWER_ELEMENT.CLASS.DEFAULT );
                     
                 }
             } else{
@@ -418,7 +420,7 @@ class Quiz {
  * the Answers Object which collects both the correct and wrong answers for multiple-choice or
  * single-choice (later will fully include any text question)
 */
-class Answers {
+export class Answers {
 
     /**
     * Enumerator for the type of Question
@@ -617,7 +619,7 @@ class Answers {
 /**
  * Question class: the manager of answers.
  */
-class Question {
+export class Question {
 
     /**
      * The Question's assigned number.
@@ -680,10 +682,9 @@ class Question {
 
 }
 
-
 function main() {
 
-    let question1 = new Question(
+    let question1 = new mod.Question(
         1,
         'Which is not a field of a Set Object?',
         new Set(['length']),
@@ -691,7 +692,7 @@ function main() {
         "the Set object does not contain a length. The size of a set is a read-only getter while that's not the case for arrays which allow modifying the length to truncate the array."
     )
 
-    let question2 = new Question(
+    let question2 = new mod.Question(
         2,
         'Which of the following statements is used to control the flow of execution based on a condition?',
         new Set(['if-else Statement']),
@@ -700,7 +701,7 @@ function main() {
         labeled statements are any statements with a label and can be broken with a 'break' statement. `
     )
 
-    let question3 = new Question(
+    let question3 = new mod.Question(
         3,
         'The ______ statement executes a block of code based on multiple possible conditions.',
         new Set(['switch statment', 'else-if statement']),
@@ -709,7 +710,7 @@ function main() {
         While and if-else statement executes on a single condition. The else-if statment allows multiple conditions by chaining if statments, however, if you're going
         to have a chain of these it may be time to consider a switch statement.`
     )
-    let question4 = new Question(
+    let question4 = new mod.Question(
         4,
         'Select a scripting languages',
         new Set(['JavaScript', 'Python']),
@@ -719,9 +720,7 @@ function main() {
 
     //test
     let questions = [question1, question2, question3, question4];
-    let quiz = new Quiz(questions);
+    new mod.Quiz(questions);
 
 
 }
-
-main();
