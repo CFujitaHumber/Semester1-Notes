@@ -107,8 +107,17 @@
                 Under the root, there is a specific layout of directories that organizes data within a scope of visibility and purpose.
             </p>
             <dl>
+                <dt>Root</dt>
+                <dd>Ancestor of all files and the home of the root user.</dd>
+                
                 <dt>/dev</dt>
                 <dd>Special files store the device data as blocks (block special data) or a stream (character special data) under a subdirectory of root called dev. </dd>
+
+                <dt>/mnt</dt>
+                <dd>contains mounting point for mounting other filesystems</dd>
+
+                <dt>/temp</dt>
+                <dd>temporary files</dd>
 
                 <dt>/boot</dt>
                 <dd>Contains the files to boot the system</dd>
