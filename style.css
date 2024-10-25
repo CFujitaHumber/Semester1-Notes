@@ -65,6 +65,14 @@ aside, main{
     --main-width: calc(100vw - calc(var(--aside-width) + var(--main-padding)*2));
 }
 
+section{
+    /* Display & Box Model  */
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1em;
+    padding: 1em;
+}
+
 header{
     /* position  */
     position: sticky;
@@ -90,9 +98,6 @@ main{
     min-width: var(--main-width);
     padding: var(--main-padding);
     margin: 0;
-
-    /* other */
-    background-color: #223127;
 }
 
 footer{
@@ -102,7 +107,7 @@ footer{
     /* Display & Box Model  */
 
     /* other */
-    background-color: red;
+    
 }
 
 
