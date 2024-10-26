@@ -228,14 +228,6 @@ footer{
    ! Question
    !========================================================================== */
 
-
-.quiz > div, .quiz-content{
-    /* Display & Box Model  */
-    display: flex;
-    flex-flow: column wrap;
-    
-}
-
 .quiz-main *{
     display: flex;
     flex-flow: row wrap;
