@@ -35,6 +35,19 @@ let load = new Promise ((resolve, reject) => {
         }
            
         });
+        document.getElementById('study-dropbtn').addEventListener('click',(eventTarget)=>{
+            let element = document.getElementById('study-dropdown');
+            if(element == null){
+                eventTarget.target.setAttribute('class','hidden');
+            } else{
+                if(element.getAttribute('class') == 'dropleft hidden'){
+                    element.setAttribute('class','dropleft');
+                }else{
+                    element.setAttribute('class','dropleft hidden');
+                }
+        }
+           
+        });
        resolve(button);
     }, 300);
 });

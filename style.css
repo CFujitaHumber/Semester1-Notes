@@ -47,8 +47,16 @@ a, a:hover, a:visited, a:active {
 
 /*I'm annoyed at browsers*/
 body{
+    /* position*/
+    position: relative;
     /* Display & Box Model  */
     margin: 0;
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'menu main main'
+    'menu footer footer';
+    gap: 0;
 }
 
 
@@ -75,17 +83,21 @@ section{
 
 header{
     /* position  */
+    grid-area: header;
     position: sticky;
     top: 0;
 }
 
 aside{
     /* position */
-    float: left;
-    
+    grid-area: menu;
+    position: sticky;
+    top: 0;
+    left: 0;
 
     /* Display & Box Model  */
     min-width: var(--aside-width);
+    max-width: max-content;
     padding: 0;
     margin: 0;
     /* Others */
@@ -94,6 +106,8 @@ aside{
 }
 
 main{
+    /*postion*/
+    grid-area: main;
     /* Display & Box Model  */
     min-width: var(--main-width);
     padding: var(--main-padding);
@@ -102,7 +116,8 @@ main{
 
 footer{
     /* Positioning */
-    position: sticky;
+    grid-area: footer;
+    position: absolute;
     bottom: 0;
     /* Display & Box Model  */
 
@@ -116,6 +131,7 @@ footer{
    !========================================================================== */
 
 .aside {
+
     /* Display & Box Model */
     display: flex;
     flex-flow: column wrap;
@@ -223,6 +239,39 @@ footer{
     /* Other  */
     background-color: var(--blush);
 }
+
+/* * drop-down
+   *========================================================================== */
+
+
+.dropleft{
+    /*position*/
+    position: absolute;
+    left: 100%;
+
+    /* Display and box model*/
+    max-width: 100%;
+    min-width: max-content;
+    display: flex;
+    flex-flow: column wrap;
+
+    /* other */
+    background-color: var(--honeydew-transparent);
+}
+
+.drop-left > a{
+    /*other*/
+    border-bottom: var(--dark-green) solid 1px;
+    
+}
+
+.drop-left > h2{
+    /*other*/
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+
 
 /* !==========================================================================
    ! Question
