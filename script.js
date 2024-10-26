@@ -35,19 +35,25 @@ let load = new Promise ((resolve, reject) => {
         }
            
         });
-        document.getElementById('study-dropbtn').addEventListener('click',(eventTarget)=>{
-            let element = document.getElementById('study-dropdown');
-            if(element == null){
-                eventTarget.target.setAttribute('class','hidden');
-            } else{
-                if(element.getAttribute('class') == 'dropleft hidden'){
-                    element.setAttribute('class','dropleft');
-                }else{
-                    element.setAttribute('class','dropleft hidden');
-                }
+        let study = document.getElementById('study-dropbtn');
+        if(study != null){
+            study.addEventListener('click',(eventTarget)=>{
+                let element = document.getElementById('study-dropdown');
+                if(element == null){
+                    eventTarget.target.setAttribute('class','hidden');
+                } else{
+                    if(element.getAttribute('class') == 'dropleft hidden'){
+                        element.setAttribute('class','dropleft');
+                    }else{
+                        element.setAttribute('class','dropleft hidden');
+                    }
+                } 
+            });
+        }else{
+         console.log('soft error: no study dropleft menu found.');
         }
            
-        });
+        
        resolve(button);
     }, 300);
 });

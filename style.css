@@ -100,6 +100,7 @@ aside{
     max-width: max-content;
     padding: 0;
     margin: 0;
+
     /* Others */
     background-color: var(--honeydew);
     color: var(--dark-green);
@@ -257,6 +258,8 @@ footer{
 
     /* other */
     background-color: var(--honeydew-transparent);
+    backdrop-filter: blur(5px);
+    animation: shift-in-left 0.2s 1 forwards;
 }
 
 .drop-left > a{
@@ -518,6 +521,15 @@ footer{
 
 @media only screen and (max-width: 430px) {
 
+    aside{
+        position: absolute;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        
+        /* Others */
+        background-color: white;
+    }
 
     .aside {
         /* position */
@@ -526,8 +538,8 @@ footer{
         left: 0;
 
         /* Display & Box Model  */
-        max-width: 80vw;
-        min-width: 80vw;
+        max-width: 60vw;
+        min-width: max-content;
 
         /* other */
         background-color: var(--honeydew-transparent);

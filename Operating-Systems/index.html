@@ -1,227 +1,234 @@
 <!DOCTYPE html>
-<head>
+<html lang="en">
+    <head>
 
-    <!-- *Title -->
-    <title>Operating Systems Notes</title>
+        <!-- *Title -->
+        <title>Operating Systems Notes</title>
+        
+        <!-- *Description and Viewport-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Compiled Notes about Linux">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- *Description and Viewport-->
-    <meta name="description" content="Compiled Notes about Linux">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--*Google Preconnects and such-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
-
-    <!-- *Stylesheet -->
-    <link rel="stylesheet" href="../style.css">
-
+        <!--*Google Preconnects and such-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
     
-</head>
-<body>
-    <header>
-        <nav id="nav">
-            <div id="mobile-nav" class="nav mobile">
-                <a id="btn-sidebar" class="material-symbols-outlined">chevron_right</a>
-                <a id="btn-home" class="material-symbols-outlined" href="../index.html">home</a>
-                <a id="btn-menu" class="material-symbols-outlined">menu</a>
-            </div>
-            <div id="computer-nav" class="nav computer">
-                <a class="nav-item" href="../index.html">Home</a>
-                <a class="nav-item" href="../JavaScript/">JavaScript</a>
-                <a class="nav-item" href="../Algorithms/index.html">Algorithms</a>
-                <a class="nav-item current" href="index.html">Operating Systems</a>
-                <a class="nav-item" href="">Web Programmings</a>
-                <a class="nav-item" href="">Read and Write</a>
-                <a class="nav-item" href="../Database/index.html">Database</a>
-            </div>
-        </nav>
-    </header>
-    <aside>
-        <div class="aside computer" id="aside-nav">
-            <div>
-                <h1>Course</h1>
-                <a class="current" href="index.html">
-                    <span class="material-symbols-outlined">search</span>
-                    <span class="aside-title">Overview</span>
-                </a>
-                <a href="file-management.html">
-                    <span class="material-symbols-outlined">book</span>
-                    <span class="aside-title">Linux File Management</span>
-                </a>
-            </div>
-            <div>
-                <h1>Resources</h1>
-                <a id="study-dropbtn" class="drop-btn">
-                    <span class="material-symbols-outlined ">book</span>
-                    <span class="title">Study</span>
-                    <span class="material-symbols-outlined ">arrow_right</span>
-                </a>
-                <div id="study-dropdown" class="dropleft hidden">
-                    <h2>Week 1</h2>
-                    <a target="_blank" target="_blank" href="https://www.geeksforgeeks.org/unix-file-system/">
-                        <span class="aside-title">Unix File System</span>
+        <!-- *Stylesheet -->
+        <link rel="stylesheet" href="../style.css">
+    
+        
+    </head>
+    <body>
+        <header>
+            <nav id="nav">
+                <div id="mobile-nav" class="nav mobile">
+                    <a id="btn-sidebar" class="material-symbols-outlined">chevron_right</a>
+                    <a id="btn-home" class="material-symbols-outlined" href="../index.html">home</a>
+                    <a id="btn-menu" class="material-symbols-outlined">menu</a>
+                </div>
+                <div id="computer-nav" class="nav computer">
+                    <a class="nav-item" href="../index.html">Home</a>
+                    <a class="nav-item" href="../JavaScript/">JavaScript</a>
+                    <a class="nav-item" href="../Algorithms/index.html">Algorithms</a>
+                    <a class="nav-item current" href="index.html">Operating Systems</a>
+                    <a class="nav-item" href="">Web Programmings</a>
+                    <a class="nav-item" href="">Read and Write</a>
+                    <a class="nav-item" href="../Database/index.html">Database</a>
+                </div>
+            </nav>
+        </header>
+        <aside>
+            <div class="aside computer" id="aside-nav">
+                <div>
+                    <h1>Course</h1>
+                    <a class="current" href="index.html">
+                        <span class="material-symbols-outlined">search</span>
+                        <span class="aside-title">Overview</span>
                     </a>
-                    <a target="_blank" href="https://www.geeksforgeeks.org/file-system-navigation-commands-in-linux/">
-                        <span class="aside-title">File System Navigation Commands</span>
+                    <a href="file-management.html">
+                        <span class="material-symbols-outlined">book</span>
+                        <span class="aside-title">Linux File Management</span>
                     </a>
-                    <a target="_blank" href="https://www.geeksforgeeks.org/file-management-in-linux/">
-                        <span class="aside-title">File management</span>
-                    </a>
-                    <h2>Week 2</h2>
-                    <a  target="_blank" href="https://www.redhat.com/sysadmin/linux-file-permissions-explained">
-                        <span class="aside-title">About File Permissions</span>
-                    </a>
-                    <a  target="_blank" href="https://linuxhandbook.com/linux-file-permissions/">
-                        <span class="aside-title">Using File Permissions</span>
-                    </a>
-                    <a  target="_blank" href="https://linuxhandbook.com/suid-sgid-sticky-bit/">
-                        <span class="aside-title">SUID vs SGID vs Sticky Bit</span>
-                    </a>
-                    <h2>Week 3</h2>
-                    <a  target="_blank" href="https://www.redhat.com/sysadmin/linux-commands-to-know">
-                        <span class="aside-title">Commands to know</span>
-                    </a>
-                    <h2>Week 4</h2>
-                    <a  target="_blank" href="https://www.tecmint.com/use-wildcards-to-match-filenames-in-linux/">
-                        <span class="aside-title">Wildcards</span>
-                    </a>
-                    <h2>Week 5</h2>
-                    <a  target="_blank" href="https://www.geeksforgeeks.org/cut-command-linux-examples/">
-                        <span class="aside-title">Cut command</span>
-                    </a>
-                    <a  target="_blank" href="https://www.geeksforgeeks.org/paste-command-in-linux-with-examples/">
-                        <span class="aside-title">Paste Command</span>
-                    </a>
-                    <a  target="_blank" href="https://linuxhandbook.com/awk-command-tutorial/">
-                        <span class="aside-title">Awk command</span>
-                    </a>
-                    <a  target="_blank" href="https://www.geeksforgeeks.org/awk-command-unixlinux-examples/">
-                        <span class="aside-title">Awk Examples</span>
-                    </a>
-                    <h2>Week 6</h2>
-                    <a  target="_blank" href="https://linuxhandbook.com/redirection-linux/">
-                        <span class="aside-title">Redirection</span>
-                    <margin-left: 0.5em;/a>
-                    <a  target="_blank" href="https://www.geeksforgeeks.org/piping-in-unix-or-linux/">
-                        <span class="aside-title">Piping</span>
-                    </a>
-                    <a  target="_blank" href="https://www.howtogeek.com/725657/how-to-use-brace-expansion-in-linuxs">
-                        <span class="aside-title">Brace Expansion</span>
-                    </a>
-                    <a  target="_blank" href="https://www.howtoforge.com/tutorial/linux-join-command/">
-                        <span class="aside-title">Join Command</span>
-                    </a>
-                    <a  target="_blank" href="https://ryanstutorials.net/bash-scripting-tutorial/">
-                        <span class="aside-title">Scripting Tutorial</span>
+                    <a href="commands.html">
+                        <span class="material-symbols-outlined">book</span>
+                        <span class="aside-title">Commands</span>
                     </a>
                 </div>
-                <a class="drop-btn">
-                    <span class="material-symbols-outlined">assignment</span>
-                    <span class="title">Assignment</span>
-                    <span class="material-symbols-outlined ">arrow_right</span>
-                </a>
-                <a class="drop-btn">
-                    <span class="material-symbols-outlined">assignment_late</span>
-                    <span class="title">Problems</span>
-                    <span class="material-symbols-outlined ">arrow_right</span>
-                </a>
+                <div>
+                    <h1>Resources</h1>
+                    <a id="study-dropbtn" class="drop-btn">
+                        <span class="material-symbols-outlined ">book</span>
+                        <span class="title">Study</span>
+                        <span class="material-symbols-outlined ">arrow_right</span>
+                    </a>
+                    <div id="study-dropdown" class="dropleft hidden">
+                        <h2>Week 1</h2>
+                        <a target="_blank" target="_blank" href="https://www.geeksforgeeks.org/unix-file-system/">
+                            <span class="aside-title">Unix File System</span>
+                        </a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/file-system-navigation-commands-in-linux/">
+                            <span class="aside-title">File System Navigation Commands</span>
+                        </a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/file-management-in-linux/">
+                            <span class="aside-title">File management</span>
+                        </a>
+                        <h2>Week 2</h2>
+                        <a  target="_blank" href="https://www.redhat.com/sysadmin/linux-file-permissions-explained">
+                            <span class="aside-title">About File Permissions</span>
+                        </a>
+                        <a  target="_blank" href="https://linuxhandbook.com/linux-file-permissions/">
+                            <span class="aside-title">Using File Permissions</span>
+                        </a>
+                        <a  target="_blank" href="https://linuxhandbook.com/suid-sgid-sticky-bit/">
+                            <span class="aside-title">SUID vs SGID vs Sticky Bit</span>
+                        </a>
+                        <h2>Week 3</h2>
+                        <a  target="_blank" href="https://www.redhat.com/sysadmin/linux-commands-to-know">
+                            <span class="aside-title">Commands to know</span>
+                        </a>
+                        <h2>Week 4</h2>
+                        <a  target="_blank" href="https://www.tecmint.com/use-wildcards-to-match-filenames-in-linux/">
+                            <span class="aside-title">Wildcards</span>
+                        </a>
+                        <h2>Week 5</h2>
+                        <a  target="_blank" href="https://www.geeksforgeeks.org/cut-command-linux-examples/">
+                            <span class="aside-title">Cut command</span>
+                        </a>
+                        <a  target="_blank" href="https://www.geeksforgeeks.org/paste-command-in-linux-with-examples/">
+                            <span class="aside-title">Paste Command</span>
+                        </a>
+                        <a  target="_blank" href="https://linuxhandbook.com/awk-command-tutorial/">
+                            <span class="aside-title">Awk command</span>
+                        </a>
+                        <a  target="_blank" href="https://www.geeksforgeeks.org/awk-command-unixlinux-examples/">
+                            <span class="aside-title">Awk Examples</span>
+                        </a>
+                        <h2>Week 6</h2>
+                        <a  target="_blank" href="https://linuxhandbook.com/redirection-linux/">
+                            <span class="aside-title">Redirection</span>
+                        <margin-left: 0.5em;/a>
+                        <a  target="_blank" href="https://www.geeksforgeeks.org/piping-in-unix-or-linux/">
+                            <span class="aside-title">Piping</span>
+                        </a>
+                        <a  target="_blank" href="https://www.howtogeek.com/725657/how-to-use-brace-expansion-in-linuxs">
+                            <span class="aside-title">Brace Expansion</span>
+                        </a>
+                        <a  target="_blank" href="https://www.howtoforge.com/tutorial/linux-join-command/">
+                            <span class="aside-title">Join Command</span>
+                        </a>
+                        <a  target="_blank" href="https://ryanstutorials.net/bash-scripting-tutorial/">
+                            <span class="aside-title">Scripting Tutorial</span>
+                        </a>
+                    </div>
+                    <a class="drop-btn">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <span class="title">Assignment</span>
+                        <span class="material-symbols-outlined ">arrow_right</span>
+                    </a>
+                    <a class="drop-btn">
+                        <span class="material-symbols-outlined">assignment_late</span>
+                        <span class="title">Problems</span>
+                        <span class="material-symbols-outlined ">arrow_right</span>
+                    </a>
+                </div>
+                <div>
+                    <h1>Other</h1>
+                    <a href="quick-quiz.html">
+                        <span class="material-symbols-outlined">quiz</span>
+                        <span class="aside-title">Quick Quiz</span>
+                    </a>
+                </div>
+                
             </div>
-            <div>
-                <h1>Other</h1>
-                <a href="quick-quiz.html">
-                    <span class="material-symbols-outlined">quiz</span>
-                    <span class="aside-title">Quick Quiz</span>
+        </aside>
+        <main>
+            <section >
+                <article id="operating-system">
+                    <h1>What is an Operating System?</h1>
+                    <p>
+                        An <dfn>operating system</dfn> is low-level software—programmed close to the level of machine code.
+                        It allows users to interface with the hardware by managing higher-level software and the 
+                        computer's basic functions; management, allocation, and execution of computer storages, resources, 
+                        and the communication of devices connected through the I/O ports or wireless connection (peripherals). 
+                    </p>
+                </article>
+                <article>
+                    <h1>What are the main purposes of an <abbr title="Operating System">OS</abbr></h1>
+                    <p>
+                        The primary purpose of an operating system is to provide an interface between the hardware to user, higher-level programs (applications) to the hardware,
+                         alongside the management of the filesystem. Such as displaying a graphical user interface (GUI) through the attached monitor (device peripheral), or 
+                         interpreting inputs from a keyboard driver so the user can write a command into a shell, which the kernel will execute.
+                    </p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h1>Linux and the Linux Kernal</h1>
+                    <p>
+                    Linux and Linux Kernal are like the pea and the pea pod. Linux is a versatile open-source operating system with a hierarchical file system. 
+                    This operating system can operate multiple tasks simultaneously (multitasking), and allows multiple users access simultaneously (multi-user). 
+                    Linux Kernal is the software that interfaces any higher-level software to the hardware through the management of I/O and core processes. 
+                    Essentially, the Kernal translates and manages data through management of the hardware. 
+                    The kernel is the core of the operating system, but not the entire operating system. 
+                    Only together with the kernel and other software do they form the operating system; 
+                    Linux is the pea pod that contains the peas: shell, kernel, packaging system, desktop environment, and more.
+                    </p>
+                </article>
+                <article>
+                    <h1>Brief History</h1>
+                    <p>
+                        The “explosion” following the invention of Linux in the 1990s caused the creation of Linux distributions. 
+                        A Linux distribution still contains the Linux kernel but has additional GNU software with GPL or similar licensed software; 
+                        they can have various software alongside the kernel. For example, Debian uses the Linux kernel and BASH shell, but uses APT as the package manager, 
+                        while Red Hat uses YUM as its package manager. 
+                        There are many distributions such as OpenSUSE, Red Hat (Fedora, and CentOS), Debian (Ubuntu, Mint, Raspbian), Android, Arch, etc.. 
+                    </p>
+                </article>
+                <article>
+                    <h1>What is the difference between closed-source and open-source?</h1>
+                    <p>
+                        Most programs/applications need to be compiled ahead of its execution. 
+                        The code before compiling is called the source code. 
+                        Open-source is software/code that allows viewing, changing, and cloning of source code without usage payments via an open-source license. 
+                        The Free Software Foundation's GNU project created GPL (General Project License) which requires that all distributions of GPL licensed code to be distributed with it. 
+                        Meaning that anyone can make their own modifications of GNU software and distribute it online so long as it is also under a GPL. 
+                        There are other open-source licenses, such as the MIT license or Apache license. A closed-source license does not allow for viewing, 
+                        modification, cloning, or distribution, usually not without some sort of financial exchange (copyright). 
+                        Companies who have proprietary software use closed-source licensing; they keep source code safely to themselves.
+                        All the developers who contribute to shared open code form the open-source community.
+                        The most notable contributions are Linux, but there are others such as Apache HTTP server, VS Code, Node.js, LibreOffice, etc..
+                    </p>
+                </article>
+                <article>
+                    <h1>What is a multi-user system?</h1>
+                    <p>
+                        To prevent people who shouldn't have access to certain files, Linux has file permission, and file ownership.
+                        File ownership specifies which user owns the file and divides it into three groups: user, group, and other.
+                    </p>
+                    <dl>
+                        <dt>User</dt>
+                        <dd>Owns the file. The user created the file, but a command can change this.</dd>
+    
+                        <dt>Group</dt>
+                        <dd>Refers to a specific grouping of multiple users</dd>
+    
+                        <dt>Others</dt>
+                        <dd>anyone with access to the system</dd>
+                    </dl>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <address>
+                <a href="mailto:carsonfujita@gmail.com">
+                    <p>carsonfujita@gmail.com</p>
                 </a>
-            </div>
-            
-        </div>
-    </aside>
-    <main>
-        <section >
-            <article id="operating-system">
-                <h1>What is an Operating System?</h1>
-                <p>
-                    An <dfn>operating system</dfn> is low-level software—programmed close to the level of machine code.
-                    It allows users to interface with the hardware by managing higher-level software and the 
-                    computer's basic functions; management, allocation, and execution of computer storages, resources, 
-                    and the communication of devices connected through the I/O ports or wireless connection (peripherals). 
-                </p>
-            </article>
-            <article>
-                <h1>What are the main purposes of an <abbr title="Operating System">OS</abbr></h1>
-                <p>
-                    The primary purpose of an operating system is to provide an interface between the hardware to user, higher-level programs (applications) to the hardware,
-                     alongside the management of the filesystem. Such as displaying a graphical user interface (GUI) through the attached monitor (device peripheral), or 
-                     interpreting inputs from a keyboard driver so the user can write a command into a shell, which the kernel will execute.
-                </p>
-            </article>
-        </section>
-        <section>
-            <article>
-                <h1>Linux and the Linux Kernal</h1>
-                <p>
-                Linux and Linux Kernal are like the pea and the pea pod. Linux is a versatile open-source operating system with a hierarchical file system. 
-                This operating system can operate multiple tasks simultaneously (multitasking), and allows multiple users access simultaneously (multi-user). 
-                Linux Kernal is the software that interfaces any higher-level software to the hardware through the management of I/O and core processes. 
-                Essentially, the Kernal translates and manages data through management of the hardware. 
-                The kernel is the core of the operating system, but not the entire operating system. 
-                Only together with the kernel and other software do they form the operating system; 
-                Linux is the pea pod that contains the peas: shell, kernel, packaging system, desktop environment, and more.
-                </p>
-            </article>
-            <article>
-                <h1>Brief History</h1>
-                <p>
-                    The “explosion” following the invention of Linux in the 1990s caused the creation of Linux distributions. 
-                    A Linux distribution still contains the Linux kernel but has additional GNU software with GPL or similar licensed software; 
-                    they can have various software alongside the kernel. For example, Debian uses the Linux kernel and BASH shell, but uses APT as the package manager, 
-                    while Red Hat uses YUM as its package manager. 
-                    There are many distributions such as OpenSUSE, Red Hat (Fedora, and CentOS), Debian (Ubuntu, Mint, Raspbian), Android, Arch, etc.. 
-                </p>
-            </article>
-            <article>
-                <h1>What is the difference between closed-source and open-source?</h1>
-                <p>
-                    Most programs/applications need to be compiled ahead of its execution. 
-                    The code before compiling is called the source code. 
-                    Open-source is software/code that allows viewing, changing, and cloning of source code without usage payments via an open-source license. 
-                    The Free Software Foundation's GNU project created GPL (General Project License) which requires that all distributions of GPL licensed code to be distributed with it. 
-                    Meaning that anyone can make their own modifications of GNU software and distribute it online so long as it is also under a GPL. 
-                    There are other open-source licenses, such as the MIT license or Apache license. A closed-source license does not allow for viewing, 
-                    modification, cloning, or distribution, usually not without some sort of financial exchange (copyright). 
-                    Companies who have proprietary software use closed-source licensing; they keep source code safely to themselves.
-                    All the developers who contribute to shared open code form the open-source community.
-                    The most notable contributions are Linux, but there are others such as Apache HTTP server, VS Code, Node.js, LibreOffice, etc..
-                </p>
-            </article>
-            <article>
-                <h1>What is a multi-user system?</h1>
-                <p>
-                    To prevent people who shouldn't have access to certain files, Linux has file permission, and file ownership.
-                    File ownership specifies which user owns the file and divides it into three groups: user, group, and other.
-                </p>
-                <dl>
-                    <dt>User</dt>
-                    <dd>Owns the file. The user created the file, but a command can change this.</dd>
-
-                    <dt>Group</dt>
-                    <dd>Refers to a specific grouping of multiple users</dd>
-
-                    <dt>Others</dt>
-                    <dd>anyone with access to the system</dd>
-                </dl>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <address>
-            <a href="mailto:carsonfujita@gmail.com">
-                <p>carsonfujita@gmail.com</p>
-            </a>
-        </address>
-    </footer>
-</body>
-<!-- *Script -->
-<script src="../script.js"></script>
+            </address>
+        </footer>
+    </body>
+    <!-- *Script -->
+    <script src="../script.js"></script>
+</html>
