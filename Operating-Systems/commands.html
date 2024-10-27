@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,assignment,assignment_late,book,chevron_right,home,menu,quiz,search" />
     
         <!-- *Stylesheet -->
@@ -66,7 +67,7 @@
                 </a>
                 <div id="study-dropdown" class="dropleft hidden">
                     <h2>Week 1</h2>
-                    <a target="_blank" target="_blank" href="https://www.geeksforgeeks.org/unix-file-system/">
+                    <a target="_blank" href="https://www.geeksforgeeks.org/unix-file-system/">
                         <span class="aside-title">Unix File System</span>
                     </a>
                     <a target="_blank" href="https://www.geeksforgeeks.org/file-system-navigation-commands-in-linux/">
@@ -109,7 +110,7 @@
                     <h2>Week 6</h2>
                     <a  target="_blank" href="https://linuxhandbook.com/redirection-linux/">
                         <span class="aside-title">Redirection</span>
-                    <margin-left: 0.5em;/a>
+                    </a>
                     <a  target="_blank" href="https://www.geeksforgeeks.org/piping-in-unix-or-linux/">
                         <span class="aside-title">Piping</span>
                     </a>
@@ -145,10 +146,501 @@
         </div>
     </aside>
     <main>
-        <section>
-            <article>
-                <h1>Will be updated later</h1>
-                <p>sorry about the wait</p>
+        <section id="about">
+            <article id="bash">
+                <h1>About bash</h1>
+                <p>
+                    It is reccomended to learn about bash from the 
+                    <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener noreferrer">offical GNU site.</a>
+                </p>
+            </article>
+            <article id="getting-started">
+                <h1>Getting started with commands</h1>
+                <p>Open up a terminal, and begin by finding out.</p>
+                <ul>
+                    <a href="#who-am-i"><li>who you are</li></a>
+                    <a href="#who-else"><li>who else is logged in?</li></a>
+                    <a href="#where-am-i"><li>what your current working directory is</li></a>
+                    <a href="#what-is-here"><li>what's in your directory</li></a>
+                    <a href="#create">creating files</a>
+                    <a href="#delete"><li>deleting files</li></a>
+                    <a href="#move"><li>moving files</li></a>
+                    <a href="#copy"><li>copy files</li></a>
+                </ul>
+            </article>
+            <article id="who-am-i">
+                <h1>who am I?</h1>
+                <p>The first thing someone new should do is start by learning what their username is.</p>
+                <p>If they already know, that's great, but outputting it to a terminal is a basic command users should know anyways.</p>
+                <p>to output your username type <a href="#whoami"><code class="bash">whoami</code></a> into your terminal should look like this</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ whoami <br />
+                        username
+                    </code>
+                </div>
+            </article>
+            <article id="who-else">
+                <h1>Who else is logged in?</h1>
+                <p>If you want to know who is logged in at the same time you are use <a href="#who"><code class="bash">who</code></a>.</p>
+                <p>Your terminal should look somewhat like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ who <br />
+                        username seat0         2024-10-21 20:30 (login screen)
+                        username tty2          2024-10-21 20:30 (tty2)
+                    </code>
+                </div>
+            </article>
+            <article id="where-am-i">
+                <h1>Where are you?</h1>
+                <p>
+                    Every terminal works from a specific directory called a <dfn>present working directory</dfn>. 
+                    The 
+                    <a href="#pwd"><code class="bash">pwd</code></a>
+                    command outputs the 
+                    <abbr title="present working directory">PWD</abbr>
+                    into terminal.
+                </p>
+                <p>Your terminal should look somewhat like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ pwd <br />
+                        /home/username
+                    </code>
+                </div>
+            </article>
+            <article id="what-is-here">
+                <h1>What is here?</h1>
+                <p>
+                    If you ever need to know what files are in your <abbr title="present working directory">PWD</abbr> or any other directory,
+                    then you're gonna need to use 
+                    <a href="#ls"><code class="bash">ls</code></a>.
+                    Short for 'list'; the <a href="#ls"><code class="bash">ls</code></a> command provides a list of everything in a directory.
+                </p>
+                <p>Looks something like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ ls <br />
+                        Desktop 
+                        Documents
+                        Downloads
+                        Music
+                        Videos
+                    </code>
+                </div>
+                <p>
+                    To see every file including special and hidden files (files that start with '.' are hidden) you need the (-a) switch.
+                </p>
+                <p>Use of the switch should similar to the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        [username@hostname:~$ ls -a <br />
+                        .                
+                        ..                  
+                        .cache
+                        .config 
+                        Desktop 
+                        Documents
+                        Downloads
+                        .local
+                        Music
+                        Videos
+                    </code>
+                </div>
+                <p>
+                    To see a long format you need the (-l) switch.
+                </p>
+                <div class="code-block">
+                    <code class="bash">
+                        [username@hostname:~$ ls -a <br />
+                        drwxr-xr-x. 1 username username 0 Oct 26 20:30 Desktop <br />
+                        drwxr-xr-x. 1 username username 0 Oct 26 20:30 Documents <br />
+                        drwxr-xr-x. 1 username username 0 Oct 26 20:30 Downloads <br />
+                        drwxr-xr-x. 1 username username 0 Oct 26 20:30 Music <br />
+                        drwxr-xr-x. 1 username username 0 Oct 26 20:30 Videos <br />
+                    </code>
+                </div>
+                <h2>What does that mean?</h2>
+                <p>reading long list format is easy once you know the format. It outputs:</p>
+                <ul>
+                    <li>File type and permission</li>
+                    <li>number of links</li>
+                    <li>owner of file</li>
+                    <li>group associated to file</li>
+                    <li>file size (bytes)</li>
+                    <li>last modification date and time</li>
+                    <li>name of file</li>
+                </ul>
+                <p>view <a href="file-management.html#filesystems">this page</a> for more on file management</p>
+            </article>
+            <article id="create">
+                <h1>how do you create files?</h1>
+                <p>
+                    You can delete files through two commands: 
+                    <a href="#touch"><code class="bash">touch</code></a> and 
+                    <a href="#mkdir"><code class="bash">mkdir</code></a>.
+                </p>
+                <p>Looks something like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ touch example.filetype <br />
+                        username@hostname:~$ touch 'annoying file with spaces in it.filetype' <br />
+                        username@hostname:~$ mkdir example-directory <br />
+                        username@hostname:~$ mkdir 'annoying directory with spaces in it' <br />
+                    </code>
+                </div>
+                <p>sometimes you want to create a directory and it's parents. Do the following with the parent switch (-p):</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ mkdir -p example/example2 <br />
+                    </code>
+                </div>
+                <p>Maybe you want multiple files. Do the following with brace expansion or just type the extra files:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ touch example{1..10} <br />
+                        username@hostname:~$ touch example11 example12 <br />
+                    </code>
+                </div>
+            </article>
+            <article id="delete">
+                <h1>how do you delete files?</h1>
+                <p>
+                    You can delete files through two commands: 
+                    <a href="#rm"><code class="bash">rm</code></a> and 
+                    <a href="#rmdir"><code class="bash">rmdir</code></a>.
+                </p>
+                <p>Looks something like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ rm example.filetype <br />
+                        username@hostname:~$ rm 'annoying file with spaces in it.filetype' <br />
+                        username@hostname:~$ rmdir example-directory <br />
+                        username@hostname:~$ rmdir 'annoying directory with spaces in it' <br />
+                    </code>
+                </div>
+                <p>
+                    <a href="#rm"><code class="bash">rm</code></a> command can delete files and directories, but in-order to delete directories you need to add the recursive switch (-r). 
+                </p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ rm -r example-directory <br />
+                        username@hostname:~$ rm -r 'annoying directory with spaces in it' <br />
+                    </code>
+                </div>
+                <p>
+                    If the user wants to be clear and verify every file, they can use the verbose switch (-v) and the interactive switch (-i) with the recursive switch (-r).
+                    <a href="#rm"><code class="bash">rm -vir</code></a> will verify each action and the user must input a 'y' or 'n' (yes or no) respectively.
+                </p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ rm -vir example <br />
+                        rm: decend into directory 'example'? y <br />
+                        rm: remove directory 'example2'? y <br />
+                        removed directory 'example/example2' <br />
+                        rm: remove directory 'example'? y <br />
+                        removed directory 'example' <br />
+                    </code>
+                </div>
+                <p>
+                    <a href="#rmdir"><code class="bash">rmdir</code></a> removes empty directories. 
+                    I'm not providing an example to this; maybe future updates.
+                </p>
+            </article>
+            <article id="move">
+                <h1>How do you move files?</h1>
+                <p>
+                    files are moved and renamed with 
+                    <a href="#mv"><code class="bash">mv</code></a>;
+                    it stands for 'move'.
+                </p>
+                <p>Looks something like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ mv Documents/bee-movie-script.txt readme.txt <br />
+                    </code>
+                </div>
+                <p>if you want to move to a specific directory use the target directory switch:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ mv -t Documents readme.txt <br />
+                    </code>
+                </div>
+                <p>if you want to verify incase of overwrite use the interactive switch (-i):</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ mv -i Documents/bee-movie-script.txt readme.txt <br />
+                        mv: overwrite 'readme.txt'? y <br />
+                    </code>
+                </div>
+            </article>
+            <article id="copy">
+                <h1>How do you copy files?</h1>
+                <p>
+                    files are copied and renamed with 
+                    <a href="#cp"><code class="bash">cp</code></a>;
+                    it stands for 'copy'. It also functions very similar to 
+                    <a href="#mv"><code class="bash">mv</code></a>.
+                </p>
+                <p>Looks something like the following:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ cp Documents/bee-movie-script.txt readme.txt <br />
+                    </code>
+                </div>
+                <p>if you want to move to a specific directory use the target directory switch:</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ cp -t Documents readme.txt <br />
+                    </code>
+                </div>
+                <p>if you want to verify incase of overwrite use the interactive switch (-i):</p>
+                <div class="code-block">
+                    <code class="bash">
+                        username@hostname:~$ cp -i Documents/bee-movie-script.txt readme.txt <br />
+                        cp: overwrite 'readme.txt'? y <br />
+                    </code>
+                </div>
+            </article>
+        </section>
+        <section id="basic">
+            <article id="clear">
+                <h1><code class="bash">clear</code></h1>
+                <p>
+                    the <code class="bash">clear</code> command clears the terminal of previous commands visually, but this doesn't mean the previous commands are removed from memory.
+                    It is very useful if you want to remove clutter from the terminal when working with multiple commands.
+                </p> 
+            </article>
+            <article id="history">
+                <h1><code class="bash">history</code></h1>
+                <p>
+                    the <code class="bash">history</code> command is a command that outputs the entire
+                    bash history of commands.
+                </p>
+            </article>
+            <article id="pwd">
+                <h1><code class="bash">pwd</code></h1>
+                <p>
+                    the <code class="bash">pwd</code> outputs your <abbr title="Present Working Directory">PWD</abbr> (Present working directory).
+                </p>
+            </article>
+            <article id="ls">
+                <h1><code class="bash">ls</code></h1>
+                <p>
+                    the <code class="bash">ls</code> command shows the files in your <abbr title="present working directory">PWD</abbr>.
+                </p>
+                <dl>
+                    <dt>-l</dt>
+                    <dd>presents the information in long form</dd>
+
+                    <dt>-a</dt>
+                    <dd>shows all files</dd>
+
+                    <dt>-t</dt>
+                    <dd>sorts by time</dd>
+                </dl>
+            </article>
+            <article id="who">
+                <h1><code class="bash">who</code></h1>
+                <p>
+                    shows usernames of users logged in. <a href="#whoami">whoami</a> shows your username.
+                </p>
+            </article>
+            <article id="whoami">
+                <h1><code class="bash">whoami</code></h1>
+                <p>
+                    outputs your username.  <a href="#who">who</a> shows all users logged in.
+                </p>
+            </article>
+            <article id="whatis">
+                <h1><code class="bash">whatis</code></h1>
+                <p>outputs a brief definition of a command.</p>
+            </article>
+            <article id="man">
+                <h1><code class="bash">man</code></h1>
+                <p>outputs a in-depth definition of any command.</p>
+            </article>
+            <article id="tree">
+                <h1><code class="bash">tree</code></h1>
+                <p>outputs a heirarchical tree of the <abbr title="present working directory">PWD</abbr> or any specified directory</p>
+            </article>
+        </section>
+        <section id="file-management">
+            <article id="mkdir">
+                <h1><code class="bash">mkdir</code></h1>
+                <p>creates a directory in the <abbr title="present working directory">PWD</abbr> or any specified directory.</p>
+                <dl>
+                    <dt>-p</dt>
+                    <dd>creates any parent directories that do not currently exist.</dd>
+                </dl>
+            </article>
+            <article id="rmdir">
+                <h1><code class="bash">rmdir</code></h1>
+                <p>removes an empty directory. use <a href="#rm"><code class="bash">rm</code></a> to remove directories containing files.</p>
+            </article>
+            <article id="touch">
+                <h1><code class="bash">touch</code></h1>
+                <p>Changes the access/modification time to now, and will create a new file if there isn't one.</p>
+                <dl>
+                    <dt>-c</dt>
+                    <dd>Does not create a file </dd>
+
+                    <dt>-d</dt>
+                    <dd>changes the date of the file to attached string</dd>
+                </dl>
+            </article>
+            <article id="mv">
+                <h1><code class="bash">mv</code></h1>
+                <p>moves files</p>
+                <dl>
+                    <dt>-t</dt>
+                    <dd>sets the directory</dd>
+
+                    <dt>-i</dt>
+                    <dd>makes it interactive such as confirming the overwrite of files.</dd>
+                </dl>
+            </article>
+            <article id="cp">
+                <h1><code class="bash">cp</code></h1>
+                <p>copies files/directories</p>
+                <dl>
+                    <dt>-r</dt>
+                    <dd>recursively deletes the file; all files inside will also be deleted. Used for directories containing files.</dd>
+
+                    <dt>-i</dt>
+                    <dd>confirms if overwriting</dd>
+                </dl>
+
+            </article>
+            <article id="chmod">
+                <h1><code class="bash">chmod</code></h1>
+                <p>changes the permissions of a file</p>
+            </article>
+            <article id="chown">
+                <h1><code class="bash">chown</code></h1>
+                <p>changes the ownership of a file</p>
+            </article>
+        </section>
+        <section id="file-viewing">
+            <h1>file viewing commands</h1>
+            <article id="less">
+                <h1><code class="bash">less</code></h1>
+                <p>allows you to scroll through a file longer than the screen and exits with 'q'</p>
+                <dl>
+                    <dt>-N</dt>
+                    <dd>gives you lines numbers</dd>
+
+                    <dt>-F</dt>
+                    <dd>causes less to close if the file is less than 1 page</dd>
+                </dl>
+            </article>
+            <article id="more">
+                <h1><code class="bash">more</code></h1>
+                <p>similar to <a href="#less">less</a> but automatically closes when you reach the end. </p>
+                <dl>
+                    <dt>-n</dt>
+                    <dd>the amount of lines shown per page (you can also just write the number)</dd>
+
+                    <dt>-s</dt>
+                    <dd>squezes multiple blank lines into one.</dd>
+                </dl>
+            </article>
+            <article id="head">
+                <h1><code class="bash">head</code></h1>
+                <p>Shows the first lines of a file</p>
+                <dl>
+                    <dt>-n</dt>
+                    <dd>shows up to the first <i>n</i> lines of a file</dd>
+
+                    <dt>-v</dt>
+                    <dd>prints headers</dd>
+                </dl>
+            </article>
+            <article id="tail">
+                <h1><code class="bash">head</code></h1>
+                <p>opposite of <a href="#head">head</a>. Shows the last lines of a file</p>
+                <dl>
+                    <dt>-n</dt>
+                    <dd>shows up to the last <i>n</i> lines of a file</dd>
+
+                    <dt>-v</dt>
+                    <dd>prints headers</dd>
+                </dl>
+            </article>
+            <article id="nano">
+                <h1><code class="bash">nano</code></h1>
+                <p>just use <code class="bash">vim</code>.</p>
+            </article>
+        </section>
+        <section id="time">
+            <h1>Time related commands</h1>
+            <article id="hwclock">
+                <h1><code class="bash">hwclock</code></h1>
+                <p>time clock utility</p>
+            </article>
+            <article id="date">
+                <h1><code class="bash">date</code></h1>
+                <p>displays the current date</p>
+                <dl>
+                    <dt>%m</dt>
+                    <dd>the month marker</dd>
+
+                    <dt>%d</dt>
+                    <dl>the day marker</dl>
+
+                    <dt>%y</dt>
+                    <dd>the day marker</dd>
+
+                    <dt>%H</dt>
+                    <dd>hour marker</dd>
+
+                    <dt>%M</dt>
+                    <dd>Minute marker</dd>
+
+                    <dt>%S</dt>
+                    <dd>Second Marker</dd>
+                </dl>
+            </article>
+            <article id="cal">
+                <h1><code class="bash">cal</code></h1>
+                <p>prints a tiny graphic of the current month calendar. You can also specify the month and year of any date.</p>
+                <dl>
+                    <dt>-m</dt>
+                    <dd>displays the month</dd>
+
+                    <dt>-l</dt>
+                    <dd>displays the year</dd>
+                </dl>
+            </article>
+        </section>
+        <section id="others">
+            <h1>Other Commands</h1>
+            <article id="sort">
+                <h1><code class="bash">sort</code></h1>
+                <p>sorts lines in a file</p>
+                <dl>
+                    <dt>-n</dt>
+                    <dd>sort numerically</dd>
+
+                    <dt>-u</dt>
+                    <dd>removes any repititions</dd>
+                </dl>
+            </article>
+            <article id="cut">
+                <h1><code class="bash">cut</code></h1>
+                <p>cuts lines from a file and outputs it</p>
+                <dl>
+                    <dt>-d</dt>
+                    <dd>specifies the delimiter</dd>
+
+                    <dt>-f</dt>
+                    <dd>specifies the field</dd>
+                </dl>
+            </article>
+            <article id="paste">
+                <h1><code class="bash">paste</code></h1>
+                <p>sorts lines in a file</p>
             </article>
         </section>
     </main>

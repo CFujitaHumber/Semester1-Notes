@@ -109,7 +109,7 @@
                         <h2>Week 6</h2>
                         <a  target="_blank" href="https://linuxhandbook.com/redirection-linux/">
                             <span class="aside-title">Redirection</span>
-                        <margin-left: 0.5em;/a>
+                        </a>
                         <a  target="_blank" href="https://www.geeksforgeeks.org/piping-in-unix-or-linux/">
                             <span class="aside-title">Piping</span>
                         </a>
@@ -145,63 +145,111 @@
             </div>
         </aside>
         <main>
-            <section >
+            <section>
                 <article>
-                    <h1>What is a file, and a file system?</h1>
+                    <h1 id="files">What is a file, and a file system?</h1>
                     <p>
                         A file is the term used for any collective unit of stored data and must have a unique identifier on any storage device. 
                         Every time you format a hard-disk or flash-drive, you're writing the filesystem to one or more partition (section of the storage drive). 
                         These filesystems determine how data or information from the user is stored by allowing you to save, write, and read those files in an organized structure (data structure). 
                     </p>
                 </article>
-                <article>What is a hierarchical file system? How is it organized?</article>
-                <p>
-                    A hierarchical file system collects data into a file unit, then sorts those files in a pyramid—like a family tree.
-                    There are several types of files in Linux management: Regular Files, Directories, and Special files, Pipes, Sockets, and Symbolic Links: 
-                </p>
-                <ul>
-                    <li>Regular files just contain—not limited to—text binary, videos and images</li>
-                    <li>Directories are a file-type that store file types and their information.</li>
-                    <li>Special Files represent physical devices used for IO operations</li>
-                    <li>A Pipe is a temporary file that holds output data from one command to be used as input for a second command separated by a pipe symbol (|) </li>
-                    <li>A Symbolic Link is a reference to another file. (aka Soft link) It has text locating the file path to the file it references.</li>
-                </ul>
-                <p>
-                    Instead of parents, grandparents, and children, the Linux file system organizes directories into a tree structure with root (/) as the parent of all directories.
-                    All files require a unique identifier called a path name, which specifies the location of a file in the system through the names of the file itself, and the directories over it.
-                    Under the root, there is a specific layout of directories that organizes data within a scope of visibility and purpose.
-                </p>
-                <dl>
-                    <dt>Root</dt>
-                    <dd>Ancestor of all files and the home of the root user.</dd>
-                    
-                    <dt>/dev</dt>
-                    <dd>Special files store the device data as blocks (block special data) or a stream (character special data) under a subdirectory of root called dev. </dd>
-    
-                    <dt>/mnt</dt>
-                    <dd>contains mounting point for mounting other filesystems</dd>
-    
-                    <dt>/temp</dt>
-                    <dd>temporary files</dd>
-    
-                    <dt>/boot</dt>
-                    <dd>Contains the files to boot the system</dd>
-    
-                    <dt>/etc</dt>
-                    <dd>Machine-local system configuration files</dd>
-    
-                    <dt>/home</dt>
-                    <dd>User home directories</dd>
-                </dl>
-                <h3>/bin vs /sbin</h3>
-                <p>They are both essential to the filesystem, but note that:</p>
-                <dl>
-                    <dt>/bin</dt>
-                    <dd>stores the command binaries for running the system</dd>
-    
-                    <dt>/sbin</dt>
-                    <dd>stores the utilities of system administration</dd>
-                </dl>
+                <article id="filesystems">
+                    <h1>What is a hierarchical file system? How is it organized?</h1>
+                    <p>
+                        A hierarchical file system collects data into a file unit, then sorts those files in a pyramid—like a family tree.
+                        There are several types of files in Linux management: Regular Files, Directories, and Special files, Pipes, Sockets, and Symbolic Links: 
+                    </p>
+                    <ul>
+                        <li>Regular files just contain—not limited to—text binary, videos and images</li>
+                        <li>Directories are a file-type that store file types and their information.</li>
+                        <li>Special Files represent physical devices used for IO operations</li>
+                        <li>A Pipe is a temporary file that holds output data from one command to be used as input for a second command separated by a pipe symbol (|) </li>
+                        <li>A Symbolic Link is a reference to another file. (aka Soft link) It has text locating the file path to the file it references.</li>
+                    </ul>
+                    <p>
+                        Instead of parents, grandparents, and children, the Linux file system organizes directories into a tree structure with root (/) as the parent of all directories.
+                        All files require a unique identifier called a path name, which specifies the location of a file in the system through the names of the file itself, and the directories over it.
+                        Under the root, there is a specific layout of directories that organizes data within a scope of visibility and purpose.
+                    </p>
+                    <dl>
+                        <dt>Root</dt>
+                        <dd>Ancestor of all files and the home of the root user.</dd>
+                        
+                        <dt>/dev</dt>
+                        <dd>Special files store the device data as blocks (block special data) or a stream (character special data) under a subdirectory of root called dev. </dd>
+        
+                        <dt>/mnt</dt>
+                        <dd>contains mounting point for mounting other filesystems</dd>
+        
+                        <dt>/temp</dt>
+                        <dd>temporary files</dd>
+        
+                        <dt>/boot</dt>
+                        <dd>Contains the files to boot the system</dd>
+        
+                        <dt>/etc</dt>
+                        <dd>Machine-local system configuration files</dd>
+        
+                        <dt>/home</dt>
+                        <dd>User home directories</dd>
+                    </dl>
+                    <h3>/bin vs /sbin</h3>
+                    <p>They are both essential to the filesystem, but note that:</p>
+                    <dl>
+                        <dt>/bin</dt>
+                        <dd>stores the command binaries for running the system</dd>
+        
+                        <dt>/sbin</dt>
+                        <dd>stores the utilities of system administration</dd>
+                    </dl>
+                    <p>File permissions specify who can read, write, and execute (meaning run) a file and their permissions differ from files and directories.</p>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Directories</th>
+                            <th>Regular Files</th>
+                        </tr>
+                        <tr>
+                            <th>Read</th>
+                            <td>Can list all files and copy files from a directory</td>
+                            <td>Can view and copy file contents</td>
+                        </tr>
+                        <tr>
+                            <th>Write</th>
+                            <td>Can add or delete files into a directory (needs execute permissions to do this)</td>
+                            <td>Can modify the content</td>
+                        </tr>
+                        <tr>
+                            <th>Execute</th>
+                            <td>Can enter a directory</td>
+                            <td>Can run the file (if executable)</td>
+                        </tr>
+                    </table>
+                    <h2>More permissions</h2>
+                    <p>There are more permissions called special permissions. They are SUID, SGID, and Sticky Bit.</p>
+                    <ul>
+                        <li><dfn>SUID</dfn>: Any executions will be run with the same permissions as the owner of the file. </li>
+                        <ul>
+                            <li>Denoted with lowercase 's'</li>
+                            <li>Uppercase 's' will occur if there is an error (the file is not executable).</li>
+                        </ul>
+                        <li><dfn>SGID</dfn>: Any executions will be run with the same permissions as the group of the file</li>
+                        <ul>
+                            <li>Denoted with lowercase 's'</li>
+                        </ul>
+                        <li><dfn>Sticky Bit</dfn>:  file cannot be deleted or renamed unless user is root or owner</li>
+                        <ul>
+                            <li>Denoted with lowercase 't'</li>
+                        </ul>
+                    </ul>
+                    <p>
+                        view linuxhandbook.com for more readings on  
+                        <a href="https://linuxhandbook.com/linux-file-permissions/" target="_blank" rel="noopener noreferrer">file permissions</a>
+                        and
+                        <a href="https://linuxhandbook.com/suid-sgid-sticky-bit/" target="_blank" rel="noopener noreferrer">special permissions.</a>
+                    </p>
+                </article>
             </section>
         </main>
         <footer>
