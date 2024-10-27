@@ -3,6 +3,22 @@
    ! Fonts AND COLORS
    !========================================================================== */
 
+/*code*/
+
+.code-block{
+    color: white;
+    background-color: black;
+    width: max-content;
+    padding: 0.5rem;
+}
+
+.bash{
+    font-family: "Terminus TTF","VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: inherit;
+}
+
 :root{
     /* Display & Box Model*/
 
