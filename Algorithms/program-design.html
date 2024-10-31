@@ -34,8 +34,8 @@
                 <a class="nav-item" href="../JavaScript/index.html">JavaScript</a>
                 <a class="nav-item current" href="index.html">Algorithms</a>
                 <a class="nav-item" href="../Operating-Systems/index.html">Operating Systems</a>
-                <a class="nav-item" href="">Web Programmings</a>
-                <a class="nav-item" href="">Read and Write</a>
+                <a class="nav-item hidden" href="">Web Programmings</a>
+                <a class="nav-item hidden" href="">Read and Write</a>
                 <a class="nav-item" href="../Database/index.html">Database</a>
             </div>
         </nav>
@@ -44,22 +44,42 @@
         <div class="aside computer" id="aside-nav">
             <div>
                 <h1>Course</h1>
-                <a class="current" href="index.html">
+                <a href="index.html">
                     <span class="material-symbols-outlined">search</span>
                     <span class="aside-title">Overview</span>
                 </a>
+                <a class="current" href="./program-design.html">
+                    <span class="material-symbols-outlined">book</span>
+                    <span class="aside-title">Procedural Design</span>
+                </a>
+                <a href="./oop.html">
+                    <span class="material-symbols-outlined">book</span>
+                    <span class="aside-title">Object Oriented Design</span>
+                </a>
             </div>
-            <div>
+            <div class="hidden">
                 <h1>Resources</h1>
                 <a class="drop-btn">
-                    <span class="material-symbols-outlined">book</span>
+                    <span class="material-symbols-outlined ">book</span>
                     <span class="title">Study</span>
-                    <span class="material-symbols-outlined">arrow_right</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
                 </a>
+                <div id="study-dropdown" class="dropleft hidden">
+                    <h2>Week 1</h2>
+                    <a target="_blank" href="./pseudocode.html">
+                        <span class="aside-title">pseudocode</span>
+                    </a>
+                    <a target="_blank" href="./flowchart.html">
+                        <span class="aside-title">flowchart</span>
+                    </a>
+                    <a target="_blank" href="./uml.html">
+                        <span class="aside-title">uml</span>
+                    </a>
+                </div>
                 <a class="drop-btn">
                     <span class="material-symbols-outlined">assignment</span>
                     <span class="title">Assignment</span>
-                    <span class="material-symbols-outlined">arrow_right</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
                 </a>
                 <a class="drop-btn">
                     <span class="material-symbols-outlined">assignment_late</span>
@@ -67,7 +87,7 @@
                     <span class="material-symbols-outlined ">arrow_right</span>
                 </a>
             </div>
-            <div>
+            <div class="hidden">
                 <h1>Other</h1>
                 <a href="quick-quiz.html">
                     <span class="material-symbols-outlined">quiz</span>

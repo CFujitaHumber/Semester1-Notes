@@ -517,7 +517,7 @@ footer{
 
 .hidden{
     /* Display & Box Model  */
-    display: none;
+    display: none !important;
 }
 
 .question-total{
