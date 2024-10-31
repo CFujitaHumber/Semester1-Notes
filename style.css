@@ -12,6 +12,14 @@
     padding: 0.5rem;
 }
 
+code {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: inherit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: inherit;
+}
+
 .bash{
     font-family: "Terminus TTF","VT323", monospace;
     font-weight: 400;
@@ -213,10 +221,21 @@ footer{
 
 .material-symbols-outlined{
     /* Display & Box Model  */
+    display: inline-block;
     padding-right: 0.5rem;
 
     /* Other */
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
     font-size: 2em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
 }
 
 .nav{
@@ -498,7 +517,7 @@ footer{
 
 .hidden{
     /* Display & Box Model  */
-    display: none;
+    display: none !important;
 }
 
 .question-total{

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- *Description and Viewport-->
+    <meta charset="UTF-8">
+    <meta name="description" content="Notes about program design, variables, data-types, and more" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--*Google Preconnects and such-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <!-- *Stylesheet -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- *Title -->
+    <title>Program Design Notes</title>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <div id="mobile-nav" class="nav mobile">
+                <a id="btn-sidebar" class="material-symbols-outlined">chevron_right</a>
+                <a id="btn-home" class="material-symbols-outlined" href="../index.html">home</a>
+                <a id="btn-menu" class="material-symbols-outlined">menu</a>
+            </div>
+            <div id="computer-nav" class="nav computer">
+                <a class="nav-item" href="../index.html">Home</a>
+                <a class="nav-item" href="../JavaScript/index.html">JavaScript</a>
+                <a class="nav-item current" href="index.html">Algorithms</a>
+                <a class="nav-item" href="../Operating-Systems/index.html">Operating Systems</a>
+                <a class="nav-item hidden" href="">Web Programmings</a>
+                <a class="nav-item hidden" href="">Read and Write</a>
+                <a class="nav-item" href="../Database/index.html">Database</a>
+            </div>
+        </nav>
+    </header>
+    <aside>
+        <div class="aside computer" id="aside-nav">
+            <div>
+                <h1>Course</h1>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">search</span>
+                    <span class="aside-title">Overview</span>
+                </a>
+                <a class="current" href="./program-design.html">
+                    <span class="material-symbols-outlined">book</span>
+                    <span class="aside-title">Procedural Design</span>
+                </a>
+                <a href="./oop.html">
+                    <span class="material-symbols-outlined">book</span>
+                    <span class="aside-title">Object Oriented Design</span>
+                </a>
+            </div>
+            <div class="hidden">
+                <h1>Resources</h1>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined ">book</span>
+                    <span class="title">Study</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <div id="study-dropdown" class="dropleft hidden">
+                    <h2>Week 1</h2>
+                    <a target="_blank" href="./pseudocode.html">
+                        <span class="aside-title">pseudocode</span>
+                    </a>
+                    <a target="_blank" href="./flowchart.html">
+                        <span class="aside-title">flowchart</span>
+                    </a>
+                    <a target="_blank" href="./uml.html">
+                        <span class="aside-title">uml</span>
+                    </a>
+                </div>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment</span>
+                    <span class="title">Assignment</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+                <a class="drop-btn">
+                    <span class="material-symbols-outlined">assignment_late</span>
+                    <span class="title">Problems</span>
+                    <span class="material-symbols-outlined ">arrow_right</span>
+                </a>
+            </div>
+            <div class="hidden">
+                <h1>Other</h1>
+                <a href="quick-quiz.html">
+                    <span class="material-symbols-outlined">quiz</span>
+                    <span class="aside-title">Quick Quiz</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <section id="program-design">
+            <article id="designing-a-program">
+                <h1>Designing a Program</h1>
+                <p>The process of designing a program can be summarised in following two steps</p>
+                <ol>
+                    <li>Understand the task the program is to perform </li>
+                    <li>Determine the steps to be taken to perform the task</li>
+                </ol>
+            </article>
+            <article id="key-concepts">
+                <h2>Description</h2>
+                <p><strong>Key Concepts:</strong></p>
+                <ol>
+                    <li>
+                        <strong>Input, Process, Output:</strong>
+                        <ul>
+                            <li>Programs receive input, process it (e.g., calculations), and provide output.</li>
+                            <li>Input is stored in variables for further manipulation.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Variables</strong>
+                        <ul>
+                            <li>
+                                <dfn>Variables</dfn>
+                                are storage locations in memory with specific names
+                            </li>
+                            <li>Variables are declared with a name and a data type</li>
+                            <li>Examples of valid variable names:
+                                <code>grossPay</code>,
+                                <code>pay_rate</code>,
+                                <code>length</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Variable Declarations and Data Types</strong>
+                        <ul>
+                            <a href="#integer"><li>Integer</li></a>
+
+                            <a href="#real"><li>Real</li></a>
+
+                            <a href="#string"><li>String</li></a>
+                        </ul>
+                        Example of variable declaration: <code>Declare Integer length</code>.
+                    </li>
+                    <li>
+                        <strong>Prompting the User</strong>
+                        <ul>
+                            <li>Programs prompt users to input data using messages like "Enter your age."</li>
+                            <li>Example in pseudocode: <code>Input age</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Assignments and Calculations:</strong>
+                        <ul>
+                            <li>
+                                Assignment statements set a variable's value.
+                            </li>
+                            <li>
+                                Common operators:
+                                <ul>
+                                    <li><code>+</code>:Addition</li>
+                                    <li><code>-</code>:Subtraction</li>
+                                    <li><code>*</code>:Multiplication</li>
+                                    <li><code>/</code>:Division</li>
+                                    <li><code>%</code>:Modulus (remainder after division)</li>
+                                    <li><code>^</code>:Exponent</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Order of Operations</strong>
+                        <ol>
+                            <li>Parentheses</li>
+                            <li>Exponentiation</li>
+                            <li>Multiplication, Division, Modulus (left to right)</li>
+                            <li>Addition, Subtraction (left to right)</li>
+                        </ol>
+                        Example: <code>12 + 6 / 3</code> evaluates to <code>14</code>.
+                    </li>
+                    <li>
+                        <strong>Data Type Compatibility:</strong>
+                        <ul>
+                            <li>Integer variables cannot hold real numbers.</li>
+                            <li>Real variables can hold integers.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Integer Division:</strong>
+                        <ul>
+                            <li>Integer division results in an integer by discarding the fractional part (truncation).
+                            </li>
+                            <li>Example: <code>3 / 2</code> stores <code>1</code> in an integer variable</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Constants</strong>
+                        <ul>
+                            <li>A constant's value cannot change during program execution.</li>
+                            <li> Example: <code>Constant Real INTEREST_RATE = 0.069</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Flow and Flow Constructs</strong>
+                        <ul>
+                            <a href="#sequential-struct">
+                                <li>Sequential struct</li>
+                            </a>
+                            <a href="#decision-struct">
+                                <li>Decision struct</li>
+                            </a>
+                            <a href="#duel-decision">
+                                <li>Duel Decision</li>
+                            </a>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+
+            <article id="output-input-and-variables">
+                <h2>Output, Input and Variables</h2>
+                <ul>
+                    <li>Data produces and displayed by the program is called output </li>
+                    <li>Data received by the program is called Input. </li>
+                    <li>When a program receives data, it stores it in a variable. A variable is a named storage location
+                        in
+                        memory. </li>
+                    <li>Input is data that is typed on the keyboard. Once input is received, some process, such as a
+                        mathematical calculation, is usually performed on it. The results of the process are then sent
+                        out
+                        of the program as output.</li>
+                </ul>
+            </article>
+            <article id="input-process-output">
+                <h2>Input, Process, Output</h2>
+                <p>[image]</p>
+            </article>
+        </section>
+        <section>
+            <article id="variables">
+                <h2>Variables</h2>
+                <ul>
+                    <li>A program needs to store data in the computer's memory </li>
+                    <li>When you browse a Website and add the items to the shopping cart, data about those items is
+                        stored
+                        in memory. </li>
+                    <li>When you click the checkout button, a program running on the website's computer calculates the
+                        total
+                        of all the items in your shopping cart, applicable sales taxes, shopping cose, and the total of
+                        all
+                        these charges. </li>
+                    <li>A variable is a storage location in memory that is represented by a name. </li>
+                </ul>
+            </article>
+            <article id="naming-schemes">
+                <h3>Naming schemes</h3>
+                <ul>
+                    <li>Variable names must be one words. They cannot contain spaces. </li>
+                    <li>In most languages, punctuation characters cannot be used in variable names. </li>
+                    <li>Use only alphabetic letters and numbers in variable names. The first character of a variable
+                        cannot
+                        be a number. </li>
+                    <li>Valid Identifiers <ul>
+                            <li>grosspay payrate </li>
+                            <li>gross_pay pay_rate </li>
+                            <li>grossPay payRate</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="example-schemes">Example schemes</h4>
+                <ul>
+                    <li>flatcase </li>
+                    <li>camelCase </li>
+                    <li>kebab-case </li>
+                    <li>Snake_case </li>
+                    <li>PascalCase</li>
+                </ul>
+            </article>
+
+
+            <article id="declarations-and-data-types">
+                <h3>Declaration</h3>
+                <p>
+                    <dfn>Declaration</dfn> is the process of assigning a variable with it's name and typically datatype.
+                    <br />
+                    Example of declaration: <code>Declare Real example</code>.
+                </p>
+                <ul>
+                    <li>
+                        Variable declaration is a statement that specifies two things about a variable
+                        <dl>
+                            <dt>Name</dt>
+                            <dd>The name as a reference to data stored in RAM</dd>
+
+                            <a href="#data-types"><dt>Data type</dt></a>
+                            <dd>the type of data that the variable will hold.</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <h3 id="data-types">Data types</h3>
+                <p>
+                    The data types that you are allowed to use depend on the programming language. For example, the
+                    Java language provides four data types for integer numbers, two data types for real numbers, one
+                    data
+                    type for strings and others.
+                    <br />
+                    We will use the following data types:
+                </p>
+                <dl>
+                    <dt id="integer">Integer</dt>
+                    <dd>hold whole numbers, such as
+                        <code>42</code>,
+                        <code>0</code>,
+                        <code>-99</code>
+                    </dd>
+
+                    <dt id="real">Real</dt>
+                    <dd>hold either whole numbers or numbers with fractional parts such as
+                        <code>3.5</code>,
+                        <code>0</code>,
+                        <code>-3.0</code>
+                    </dd>
+
+                    <dt id="string">String</dt>
+                    <dd>hold any string of character, such as name, address, password, and so on.</dd>
+                </dl>
+            </article>
+            <article id="initialization">
+                <h3>Initialization</h3>
+                <p>
+                    <dfn>Initialization</dfn> is the process of assigning a variable with a value
+                    <br />
+                    Example of declaration: <code>Set Real example = 5</code>.
+                </p>
+            </article>
+            <article id="truncation">
+                <h3>Truncation</h3>
+                <p>
+                    <dfn>trunication</dfn> is the loss or shortening of a variable's data.
+                    <br />
+                    If you set the value of a integer from a real number the value will be trunicated.
+                </p>
+            </article>
+            <article id="scope">
+                <h4>Scope</h4>
+                <p>
+                    a <dfn>Scope</dfn> is a contained section of a task-list. 
+                </p>
+                <h4>Global Variable</h4>
+                <p>
+                    <dfn>Global Variables</dfn> are a type of variable accessible to all task-lists for a solution; they are defined outside the scope of subtasks.
+                    Global variables are also called fields and are automatically initialised when the program executes.
+                </p>
+                <ul>
+                    <li>A variable declared outside a module. </li>
+                    <li>It is accessible to all the modules in an algorithm</li>
+                    <li>It can be used by any module in the program; called the variable's scope.</li>
+                </ul>
+
+                <h4>Local Variable</h4>
+                <p>
+                    <dfn>Local Variable</dfn> are a type of variable accessible to only the section of the task-list it is declared in; defined inside its scope.
+                    Local variables are not automatically initialised, and you should always assign them an initial value in the declaration statement.
+                </p>
+                <ul>
+                    <li>A variable declared inside a module</li>
+                    <li>It is accessible only to a particular module where it is declared.</li>
+                    <li>It can only be used within the module's scope</li>
+                </ul>
+            </article>
+
+        </section>
+        <section>
+            <article id="sequential-struct">
+                <h3>Sequential Structure</h3>
+                <p>
+                    <dfn>Sequential Structure</dfn> is a process of steps or events. 
+                    <br />
+                    Scripting typically follows a structure of command in an order of tasks. 
+                    See an example <a target="_blank" href="index.html#example-task-list">here.</a>
+                </p>
+            </article>
+            <article>
+                <h3 i="decision-struct">Decision Structure</h3>
+                <p>
+                    <dfn>Decision Structure</dfn> follows <a href="#sequential-struct">sequential-structure</a> but changes the <i>flow</i> of sequence based on a <i>condition</i>. 
+                </p>
+                <h3 id="duel-decision" >Duel-Decision Structure</h3>
+                <p>
+                    <dfn>Duel-Decision Structure</dfn> is a type of decision structure that changes the <i>flow</i> of sequence based on a condition's return.
+                    <br />
+                    In a Duel-Decision Structure the flow follows a condition. If the condition is true, then a separate sequence of tasks is followed; however, a false condition will result in a different sequence.
+                </p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Top-Down Design</h2>
+                <p>
+                    A complex problem may require sectioning into smaller tasks. 
+                    This is part of <dfn>Top-Down Design</dfn>, 
+                    where major tasks in a problem are recursively divided into subtasks.
+                    <br />
+                    Any programmer designing based on top-down principals needs to start at the topmost task and break those down into smaller subtasks; known as <dfn>procedural programming</dfn>.
+                    This is design can start through the creation of a hierarchy chart.
+                </p>
+            </article>
+            <article>
+                <h3>Hierarchy Chart</h3>
+                <p>
+                    a <dfn>hierarchy chart</dfn> is a visualization of all tasks and their corrosponding subtasks through arrows and boxes.
+                </p>
+                <p>[image]</p>
+            </article>
+            <article>
+                <h4>Modules</h4>
+                <p>
+                    After a hierarchy chart is made a programmer can break down the tasks into Modules.
+                    <dfn>Modules</dfn> are sections of an algorithm/process dedicated to a specific function/task. 
+                    This allows larger programs to be systematically broken into small subtasks.
+                    This process of modules and Top-Down design allows for
+                </p>
+                <ul>
+                    <li>Simpler code</li>
+                    <li>Reusable code</li>
+                    <li>Easier testing</li>
+                    <li>Faster development</li>
+                    <li>Easier understanding/readability of code</li>
+                </ul>
+                <p>
+                    When a module is called by name, that module has been invoked directly.
+                    
+                </p>
+                <h3>Modularization</h3>
+                <p>
+                    The process of dividing an algorithm into small functions is called <dfn>modularization</dfn>
+                    Modularization encapsulates variable data inside it's functions. This means that every module can contain their own variables local only to itself; no other module can access it.
+                    This is known as a <dfn>Local Variable</dfn>, where a variable is declared and accessible only to commands within a scope. 
+                    <br />
+                    On the other hand, a <dfn>Global Variable</dfn> is a variable accessible to all functions/modules in an algorithm.
+                </p>
+                <h3>Functions</h3>
+                <p>
+                    subtasks can turn only one local variable back to the parent tasks scope; called returning a value.
+                    This allows that previously local variable to be accessed by other subtasks. However, the parent task must catch the returning value through any sort of
+                    declaration or value reassignment otherwise it cannot be accessed. 
+                    <br />
+                    When a module acts as a subtask that returns a value it is known as a <dfn>function</dfn>. Essentially a function is a module that returns a value.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a href="mailto:carsonfujita@gmail.com">
+            <p>carsonfujita@gmail.com</p>
+        </a>
+
+        <span>Copyright © 2024 Carson Fujita</span>
+        <span>licensed under <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html">GPL-3</a></span>
+    </footer>
+</body>
+<!-- *Script -->
+<script src="../script.js"></script>
+
+</html>
