@@ -7,10 +7,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import MainNav from './MainNav';
+import MainNav from '../MainNav';
 
 // Home Markdown
-import WebMarkdown from './notes/home.md'
+import WebMarkdown from '../notes/home.md'
 
 /**
  * Creates the homepage for the website. The body of the webpage is imported
@@ -31,7 +31,6 @@ function Home() {
     
     return (
         <>
-            <MainNav isSubject="false" />
             <main>
                 <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />,
             </main>

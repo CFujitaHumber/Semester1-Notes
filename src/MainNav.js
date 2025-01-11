@@ -6,24 +6,25 @@
 
 import { Container, Nav, Navbar, Button, Form, NavDropdown, Offcanvas } from "react-bootstrap";
 import SideBar from "./SideBar";
+import { Link, Outlet } from "react-router";
 
 /**
  * 
  * @param {boolean} isSubject If true the left side canvas will be able to be seen
  * @returns React MainNav
  */
-function MainNav(isSubject = "false") {
+function MainNav(isSubject) {
     let expand = false; //false, sm, md, lg, xl , xxl{
-    let offcanvasLeft = <></>
+    let offcanvasLeft = (<></>)
     if(isSubject == "true"){
-        offcanvasLeft = <SideBar />
+        offcanvasLeft = (<SideBar />)
     }
     return (
         <>
             <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
                 <Container fluid>
                     {offcanvasLeft}
-                    <Navbar.Brand href="#">Study Notes</Navbar.Brand>
+                    <Navbar.Brand to="#">Study Notes</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                     <Navbar.Offcanvas
                         id={`offcanvasNavbar-expand-${expand}`}
@@ -37,13 +38,13 @@ function MainNav(isSubject = "false") {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link id="btn-home" className="material-symbols-outlined" href="#action1">home</Nav.Link>
-                                <Nav.Link href="#action2">JavaScript</Nav.Link>
-                                <Nav.Link href="#action2">Algorithms</Nav.Link>
-                                <Nav.Link href="#action2">Operating Systems</Nav.Link>
-                                <Nav.Link href="#action2">Web Programmings</Nav.Link>
-                                <Nav.Link href="#action2">Read and Write</Nav.Link>
-                                <Nav.Link href="#action2">Database</Nav.Link>
+                                <Nav.Link id="btn-home" className="material-symbols-outlined" to="/"><Link to="/">home</Link></Nav.Link>
+                                <Nav.Link to="#action2">JavaScript</Nav.Link>
+                                <Nav.Link to="#action2">Algorithms</Nav.Link>
+                                <Nav.Link to="#action2">Operating Systems</Nav.Link>
+                                <Nav.Link to="#action2">Web Programmings</Nav.Link>
+                                <Nav.Link to="#action2">Read and Write</Nav.Link>
+                                <Nav.Link><Link to="database/home">Database</Link></Nav.Link>
                             </Nav>
                             <Form className="d-flex">
                                 <Form.Control
@@ -58,6 +59,7 @@ function MainNav(isSubject = "false") {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
+            <Outlet />
         </>
     );
 }
@@ -67,17 +69,17 @@ function MainNav(isSubject = "false") {
 //         <Navbar expand="lg" className="bg-body-tertiary">
 //             <Nav id="nav">
 //                 <Container id="mobile-nav" className="nav mobile">
-//                     <a id="btn-home" class="material-symbols-outlined" href="./index.html">home</a>
+//                     <a id="btn-home" class="material-symbols-outlined" to="./index.html">home</a>
 //                     <a id="btn-menu" class="material-symbols-outlined">menu</a>
 //                 </Container>
 //                 <Container id="computer-nav" className="nav computer">
-//                     <Nav.Link href="index.html">Home</Nav.Link>
-//                     <Nav.Link href="../JavaScript/index.html">JavaScript</Nav.Link>
-//                     <Nav.Link href="../Algorithms/index.html">Algorithms</Nav.Link>
-//                     <Nav.Link href="../Operating-Systems/index.html">Operating Systems</Nav.Link>
-//                     <Nav.Link href="">Web Programmings</Nav.Link>
-//                     <Nav.Link href="">Read and Write</Nav.Link>
-//                     <Nav.Link href="../Database/index.html">Database</Nav.Link>
+//                     <Nav.Link to="index.html">Home</Nav.Link>
+//                     <Nav.Link to="../JavaScript/index.html">JavaScript</Nav.Link>
+//                     <Nav.Link to="../Algorithms/index.html">Algorithms</Nav.Link>
+//                     <Nav.Link to="../Operating-Systems/index.html">Operating Systems</Nav.Link>
+//                     <Nav.Link to="">Web Programmings</Nav.Link>
+//                     <Nav.Link to="">Read and Write</Nav.Link>
+//                     <Nav.Link to="../Database/index.html">Database</Nav.Link>
 //                 </Container>
 //             </Nav>
 //         </Navbar>

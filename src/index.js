@@ -3,15 +3,38 @@
 * @author Carson Fujita
 * @copyright Carson Fujita 2025
 */
-import { createRoot } from 'react-dom/client'
-import Home from './Home'
+
+//React imports
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//Page imports
+import Home from './pages/Home'
+import Database from "./pages/Database";
 
 // clear existing HTML content
 document.body.innerHTML = '<div id="app"></div>';
 
 //import css styles
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MainNav from "./MainNav";
+
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainNav isSubject="false" />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="database" element={<MainNav isSubject="true"/>}>
+          <Route path="home" element={<Database />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 // render
-const root = createRoot(document.getElementById('app'));
-root.render(<Home />)
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(<App />);
