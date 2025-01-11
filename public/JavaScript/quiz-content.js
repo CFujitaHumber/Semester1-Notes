@@ -1,4 +1,4 @@
-import * as mod from "../quiz.js";
+import * as mod from "../../quiz.js";
 
 
 function main() {
